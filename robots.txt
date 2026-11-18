@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lwjuolpenncjbs.github.io/humanpen-pages-seat/sitemap.xml
