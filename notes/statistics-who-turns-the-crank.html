@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who turns the crank on statistics? HumanPen and five statistical tools compared</title>
+<meta name="description" content="A statistical result can appear in three ways. Someone clicks through a menu until a table shows up. Someone writes commands, runs them, keeps the syntax. Or someone describes the ">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistics-who-turns-the-crank.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Who turns the crank on statistics? HumanPen and five statistical tools compared">
+<meta property="og:description" content="A statistical result can appear in three ways. Someone clicks through a menu until a table shows up. Someone writes commands, runs them, keeps the syntax. Or someone describes the ">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistics-who-turns-the-crank.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistics-who-turns-the-crank.html#article", "headline": "Who turns the crank on statistics? HumanPen and five statistical tools compared", "description": "A statistical result can appear in three ways. Someone clicks through a menu until a table shows up. Someone writes commands, runs them, keeps the syntax. Or someone describes the ", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistics-who-turns-the-crank.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">All comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Who turns the crank on statistics? HumanPen and five statistical tools compared</h1>
+<p>A statistical result can appear in three ways. Someone clicks through a menu until a table shows up. Someone writes commands, runs them, keeps the syntax. Or someone describes the analysis and an agent writes and runs the code.</p>
+<p>All three produce a number. They differ in what is left behind when the analyst walks away, and that difference is the whole argument here. Menus are fastest for exploration and teaching. Syntax is the strongest record for a single analyst. An agent is the only one of the three that can hand you the document and the audit at the same time.</p>
+<p><em>Editorial disclosure: this article is published by HumanPen. Statements about IBM SPSS Statistics, Stata, JASP, jamovi and RStudio come from their public pages as captured on 24 November 2026. Statements about HumanPen Start Project come from the public <code>/projects</code> and <code>/developers</code> pages read the same day. No synthetic benchmark was run, and no accuracy comparison between packages is implied. Prices and packaging change; each vendor's site is the authority.</em></p>
+<h2>At a glance</h2>
+<table><thead><tr><th>Tool</th><th>Who turns the crank</th><th>What you keep afterwards</th><th>What the public page states as the constraint</th></tr></thead><tbody>
+<tr><td><strong>IBM SPSS Statistics</strong></td><td>You, in the application, through the interface the page presents for data prep, analysis and predictive modelling.</td><td>Output and tables in the application; the analysis is reconstructed from the output.</td><td>Base subscription Starting at $99.00 USD Per Authorized User; add-on modules Starting at $79.00 USD Per Authorized User each; a free trial; campus-wide licences and student licences at special academic pricing.</td></tr>
+<tr><td><strong>Stata</strong></td><td>You, driving the package directly; the page's claim is accurate, reproducible results and seamless workflows.</td><td>Results reproducible from the code and data, with documentation to work from.</td><td>Documentation of 19,000 pages covering each feature, including formulas and fully worked examples; free webinars, NetCourses and thousands of free community additions.</td></tr>
+<tr><td><strong>JASP</strong></td><td>You, in a graphical interface, on any of the platforms it supports.</td><td>The analysis as you set it up in the interface.</td><td>Free, cross-platform, state-of-the-art graphical user interface; the stated aim is "maximally informative conclusions with a minimum of fuss".</td></tr>
+<tr><td><strong>jamovi</strong></td><td>You, in a spreadsheet-like interface on top of an R engine.</td><td>Data, analyses and results in a single file, which is what the page means by reproducible.</td><td>Free and open source; desktop always free; Cloud Guest free with no install and no credit card.</td></tr>
+<tr><td><strong>RStudio</strong></td><td>You, writing R (with Python via reticulate), in an IDE built for it.</td><td>Scripts, projects, version control, and whatever you knit from them.</td><td>Open Source Edition free under AGPL v3; RStudio Desktop Pro $1204.00 per year with a commercial licence and priority support.</td></tr>
+<tr><td><strong>HumanPen Start Project</strong></td><td>An agent, writing and running Python or R inside an isolated sandbox per project.</td><td><code>.docx</code> report, 300 dpi figures, three-line tables, <code>.pptx</code> with speaker notes, and the code.</td><td>Analyses originally done in SPSS or Stata are redone in Python or R; a second AI reviews before delivery, including a clean rerun that must reproduce results exactly.</td></tr>
+</tbody></table>
+<h2>What each public page actually describes</h2>
+<h3>IBM SPSS Statistics: the menu as an institution</h3>
+<p>SPSS is the reference point for a certain kind of social science and clinical workflow, and its commercial shape reflects that: a Base subscription Starting at $99.00 USD Per Authorized User, add-on modules Starting at $79.00 USD Per Authorized User each, a free trial, and campus-wide licences with student licences at special academic pricing.</p>
+<p>The workflow it describes is you, in the application, working through data prep, analysis and predictive modelling. That design has a virtue beyond convenience: because the interface constrains what you can ask for, two people trained on the same menus will run the same procedure, and a methods section saying "independent-samples t-test in SPSS" is a complete recipe for a reader who owns the software.</p>
+<p>Its limit is the same thing. The menu is the method, and the method is not in the output. If someone without a licence needs to re-run the analysis, or to know which options were ticked, the output file is a photograph rather than a recipe.</p>
+<h3>Stata: documentation as the product</h3>
+<p>Stata's page argues reproducibility rather than ease: accurate, reproducible results, automated reporting with exports to Word, Excel, PDF and HTML, and backward compatibility — modern Stata understanding code written decades earlier.</p>
+<p>Then there is the number that matters for anyone learning it: 19,000 pages of documentation detailing each feature, including formulas and fully worked examples. With free webinars, NetCourses and thousands of free community additions, the centre of gravity is the written record — a strong position for a chapter that has to be defended method by method.</p>
+<p>What it asks of you is effort. The documentation is the product, and reading it is the work — fine if the analysis is yours and you will defend every choice, expensive if the analysis is a means to a report that is due.</p>
+<h3>JASP: the interface, deliberately minimal</h3>
+<p>JASP describes itself in one sentence that reads like a design brief: a free cross-platform program with a state-of-the-art graphical user interface, built so that "statistical practitioners reach maximally informative conclusions with a minimum of fuss". Free, cross-platform and GUI-first removes two usual barriers — licence budget and operating system — and the "minimum of fuss" framing tells you the intended user wants the analysis, not the programming. The page does not describe a code export.</p>
+<h3>jamovi: reproducibility inside one file</h3>
+<p>jamovi is free and open source, desktop always free, Cloud Guest free with no install and no credit card, and it is powered by R. The claim worth quoting is the one about the file: data, analyses and results save into a single file, which the page presents as the basis of reproducibility.</p>
+<p>That is a clever piece of design, because it puts the audit trail in the artefact rather than beside it: hand someone the file and they have the data and the settings in one object. What it does not do, on the page's own description, is produce the manuscript.</p>
+<h3>RStudio: the script as the unit of work</h3>
+<p>RStudio's page describes the premier free, open-source development environment for R — Open Source Edition free under AGPL v3 — with RStudio Desktop Pro at $1204.00 per year for a commercial licence and priority support, and Posit AI available at $20 per month with a free trial.</p>
+<p>This is the model in which the crank is turned by a person writing code, and the record is the script: the table, the figure and the sensitivity analysis are all functions of it. It also means the quality of the audit is the quality of the person's habits — a script under version control is a strong record, a session run in the console is not.</p>
+<h2>Where the audit trail actually lives</h2>
+<p>Line the five up and the difference is archival rather than statistical. In SPSS the trail is the output plus the memory of whoever ticked the boxes; in Stata and RStudio it is the syntax and the data; in jamovi it is the project file; in JASP it is the analysis as configured in the interface. Each suffices for the person who did the work and for a colleague with the same software. The failure case — a co-author or a new student who needs the same numbers without the software, six months later — is what pushes groups toward scripts, and toward services that deliver the code with the output.</p>
+<h2>How HumanPen runs this step</h2>
+<p>HumanPen does not put an interface in front of you. You describe the analysis and attach the files — Excel, CSV, Word, PDF or zip, up to 5 GB total — and the system returns a plan. Nothing runs until you confirm it; then the work happens in Python or R in an isolated sandbox, and a second AI reviews before delivery.</p>
+<p>Three details matter for the statistics. First, the engine is Python or R, and analyses originally done in SPSS or Stata are redone in Python or R. That is a deliberate trade: you lose the familiar dialog boxes and gain an analysis anyone with a free interpreter can re-run.</p>
+<p>Second, the review is numerical rather than rhetorical. The page's four checks include the primary endpoint matching (62.2% vs 63.5%, P = 0.072 in the published example), every analysis population adding up, and a clean rerun reproducing the results exactly. The fourth is bibliographic — all 11 references found, one by one.</p>
+<p>Third, the awkward parts of a real dataset are handled explicitly. In the same public example, a secondary analysis of the International Stroke Trial with 19,435 patients in the full analysis set, roughly 150 missing outcomes are handled in a sensitivity analysis rather than dropped silently. That is the kind of decision a menu cannot make for you and a script makes only if someone thought of it.</p>
+<p>What you get back is the report, figures at 300 dpi, three-line tables, a <code>.pptx</code> with speaker notes and the code. What you do not get is a slider: a revision means stating the new scope, confirming it, and receiving a new version while the old one is kept.</p>
+<h2>Decision rules</h2>
+<p><strong>Click, if the analysis is the point.</strong> Teaching a methods class, checking a distribution before committing to a test, running a familiar procedure on a new sample — SPSS, JASP and jamovi are built for this, and the free options remove the budget argument entirely.</p>
+<p><strong>Script, if the analysis is yours to defend.</strong> A thesis chapter, a methods appendix, a re-analysis you expect to be challenged on. Stata's 19,000 pages and RStudio's script-and-project model both assume you want to own the reasoning, and they reward the effort with a record that holds up.</p>
+<p><strong>Commission, if the statistics are a step toward a document.</strong> A report, a submission, a set of results you have to reproduce with notes on where they differ. The plan fixes the analysis set before the numbers exist, the clean rerun is part of the review rather than an afterthought, and the code arrives with the prose so the next person can check rather than trust.</p>
+<p>The mistake to avoid: buying a licence when you needed a document, or commissioning one when you wanted to understand the data yourself.</p>
+<h2>FAQ</h2>
+<p><strong>Is IBM SPSS Statistics free for students?</strong> Not on the page we read. It offers a free trial and states that academic institutions have campus-wide licences and student licences at special academic pricing, so a free seat usually comes through your institution rather than the vendor's list price.</p>
+<p><strong>How much does Stata cost?</strong> We do not quote it. The home page we captured shows cart entries — a Stata/MP4 annual licence and a Stata/BE network maintenance term — but those are cart and maintenance items rather than product pricing, so we do not treat them as one.</p>
+<p><strong>Can JASP or jamovi produce a Word report and journal figures?</strong> Their pages describe the analysis and, for jamovi, a single reproducible project file. They do not describe a <code>.docx</code> report, 300 dpi figures or a slide deck, so we make no claim either way.</p>
+<p><strong>Why would HumanPen redo an SPSS analysis in Python or R?</strong> So the result can be re-run without the licence. The page states that analyses originally done in SPSS or Stata are redone in Python or R, which keeps the numbers and makes the method portable — at the cost of the interface you learned on.</p>
+<h2>Sources</h2>
+<ul><li>IBM — SPSS Statistics product page, accessed 2026-11-24: https://www.ibm.com/products/spss-statistics (Base Starting at $99.00 USD Per Authorized User; add-ons Starting at $79.00 USD Per Authorized User each; free trial; campus-wide and student licences).</li><li>Stata — home page, accessed 2026-11-24: https://www.stata.com/ (reproducible results and workflows; 19,000 pages with formulas and worked examples; free webinars and NetCourses; cart entries noted, not treated as list prices).</li><li>Stata — features page, accessed 2026-11-24: https://www.stata.com/features/ (feature documentation; thousands of free community additions).</li><li>JASP — home page, accessed 2026-11-24: https://jasp-stats.org/ (free, cross-platform, GUI; "maximally informative conclusions with a minimum of fuss").</li><li>jamovi — home page, accessed 2026-11-24: https://www.jamovi.org/ (free and open source; desktop always free; Cloud Guest free, no install or credit card; single file for data, analyses and results; powered by R).</li><li>Posit — RStudio IDE page, accessed 2026-11-24: https://posit.co/products/open-source/rstudio/ (Open Source Edition free, AGPL v3; Desktop Pro $1204.00 per year; Posit AI $20/month, free trial).</li><li>HumanPen Start Project — https://humanpen.net/projects, accessed 2026-11-24 (Python or R; SPSS and Stata analyses redone; 5 GB total; second-AI review with clean rerun, population totals, 11 references; IST example at 19,435 patients with about 150 missing outcomes; deliverables).</li><li>HumanPen Developer API — https://humanpen.net/developers, accessed 2026-11-24 (plan confirmation with <code>spec_version</code>; sandboxed execution; usage billing).</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=statistics-who-turns-the-crank">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=statistics-who-turns-the-crank">Start Project &rarr;</a></p></div>
+<div class="related"><strong>More comparisons</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/deliverable-chat-log-vs-report-package.html">Chat log or report package? The six-month test for an AI research deliverable, from HumanPen</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/editable-pptx-speaker-notes.html">A deck you can still edit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/file-limits-pages-vs-projects.html">Pages, megabytes or one total</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/graphpad-prism.html">GraphPad Prism vs HumanPen Start Project</a></li></ul></div>
+<div class="foot">Published by HumanPen. Competitor statements reflect their public pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

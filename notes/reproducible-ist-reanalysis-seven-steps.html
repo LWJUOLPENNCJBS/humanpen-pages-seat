@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Can your secondary analysis be reproduced? Seven steps, run on the IST dataset by HumanPen</title>
+<meta name="description" content="A secondary analysis of a trial is judged twice: once on whether the conclusion is interesting, and once on whether a stranger with the same file can reach the same number. The sec">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproducible-ist-reanalysis-seven-steps.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can your secondary analysis be reproduced? Seven steps, run on the IST dataset by HumanPen">
+<meta property="og:description" content="A secondary analysis of a trial is judged twice: once on whether the conclusion is interesting, and once on whether a stranger with the same file can reach the same number. The sec">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproducible-ist-reanalysis-seven-steps.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproducible-ist-reanalysis-seven-steps.html#article", "headline": "Can your secondary analysis be reproduced? Seven steps, run on the IST dataset by HumanPen", "description": "A secondary analysis of a trial is judged twice: once on whether the conclusion is interesting, and once on whether a stranger with the same file can reach the same number. The sec", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproducible-ist-reanalysis-seven-steps.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">All comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Can your secondary analysis be reproduced? Seven steps, run on the IST dataset by HumanPen</h1>
+<p>A secondary analysis of a trial is judged twice: once on whether the conclusion is interesting, and once on whether a stranger with the same file can reach the same number. The second judgment is the one that kills papers in review, and it is entirely mechanical. You can test it before submission.</p>
+<p>The judgment up front: reproducibility is not a property of the software. Stata's own site promises "accurate, reproducible results" and ships 19,000+ pages of documentation; RStudio's Open Source Edition is free under AGPL v3. Neither fact makes <em>your</em> table reproducible. What makes it reproducible is a short sequence of decisions, and the seven below are the ones that fail most often. As a worked case, HumanPen's public example reanalyses the IST trial: full analysis set 19,435 patients, primary endpoint death or dependency at six months.</p>
+<p><em>Editorial disclosure: this article is published by HumanPen. Statements about other products come from the public pages we examined on 2026-11-24. No synthetic benchmark was run; prices change, so confirm on the vendor's page.</em></p>
+<h2>1. Lock the analysis set and the endpoint before you touch a variable</h2>
+<p><strong>What it means.</strong> State the full analysis set — 19,435 in the IST example — and the primary endpoint — death or dependency at six months — in one sentence each, with the rule that decides membership. Write it before any model runs.</p>
+<p><strong>Why this step breaks.</strong> Analysis sets drift. Someone excludes a centre, someone drops rows with a blank field "temporarily", and the denominator changes between the abstract and the table. No reviewer will reconstruct your intent from a caption.</p>
+<p><strong>How to check.</strong> Count the rows in the locked file and print the number into the log. If the number in your table is not printed by code, it is a number someone typed.</p>
+<h2>2. Decide how missing outcomes are handled, and show the sensitivity</h2>
+<p><strong>What it means.</strong> In the IST example about 150 patients have a missing outcome. The main analysis has to state its assumption, and the sensitivity analysis has to be run as a separate, named output.</p>
+<p><strong>Why this step breaks.</strong> Missingness is where a result flips. Complete-case and worst-case assumptions can point in different directions, and a single reported P value hides which one you used. Reviewers increasingly ask for the alternative.</p>
+<p><strong>How to check.</strong> Confirm that the sensitivity analysis exists as its own script and its own table row, not as a sentence in the discussion. If the number of excluded patients is not stated, the reader has to guess the population.</p>
+<h2>3. Reproduce the main result exactly, to the digit</h2>
+<p><strong>What it means.</strong> The published comparison is 62.2% in the aspirin group against 63.5% in the control group, odds ratio 0.95 (0.89–1.00), P = 0.072.</p>
+<p><strong>Why this step breaks.</strong> Rounding is the usual culprit: percentages computed from a different denominator, an odds ratio reported to two decimals from an unrounded estimate, a P value that changes when a continuity correction is switched on. Each is small; together they make a table that does not match its own abstract.</p>
+<p><strong>How to check.</strong> Rerun from the raw file and diff the output against the published table cell by cell. HumanPen's review list treats this as its own item: the primary endpoint is matched at 62.2% vs 63.5%, P = 0.072, as a check rather than a claim.</p>
+<h2>4. Produce figures at 300 dpi and tables as three-line tables</h2>
+<p><strong>What it means.</strong> Figures at 300 dpi to journal standards, with captions; tables in three-line form, with the denominator visible.</p>
+<p><strong>Why this step breaks.</strong> A figure exported at screen resolution looks fine in a PDF proof and fails production. A table with vertical rules and shaded headers has to be rebuilt at typesetting, and rebuilding is where a column gets transposed.</p>
+<p><strong>How to check.</strong> Open the image properties and read the resolution. Count the horizontal rules in the table: three, plus the header separator if your target journal allows it.</p>
+<h2>5. Verify every reference to its DOI, one at a time</h2>
+<p><strong>What it means.</strong> In the example, the citations are the IST and CAST papers in <em>The Lancet</em>, 1997. HumanPen's review list records the outcome as "All 11 references found, one by one", after a PubMed search with each DOI checked.</p>
+<p><strong>Why this step breaks.</strong> Citation managers copy metadata, including the errors. A DOI can resolve to a different paper with a similar title; a trial acronym can map to a protocol paper rather than the results paper. Nothing in a formatted bibliography reveals this.</p>
+<p><strong>How to check.</strong> Resolve each DOI and compare title, journal, year, volume and first author. Do it in a column of a spreadsheet, not from memory.</p>
+<h2>6. Rerun clean, from an empty environment</h2>
+<p><strong>What it means.</strong> Delete outputs, clear the session, run the whole thing from the entry script, and compare the produced tables and figures against the delivered versions.</p>
+<p><strong>Why this step breaks.</strong> Notebook state hides order dependence. A cell that only works because a variable was defined three cells earlier will fail for the next person, and a package version pinned in your environment but not in a lockfile will fail in six months.</p>
+<p><strong>How to check.</strong> HumanPen's review describes a "clean rerun" as an exact reproduction, which is the only version of the check worth running. Run it on a machine that has never seen the project.</p>
+<h2>7. Have someone else review the four things that matter</h2>
+<p><strong>What it means.</strong> A second reviewer — in HumanPen's case a second AI pass before delivery — checks four items: the primary endpoint matches, each analysis population adds up, the clean rerun reproduces exactly, and all 11 references are found one by one.</p>
+<p><strong>Why this step breaks.</strong> Self-review checks what you expect to see. The four items above are chosen because each is cheap to check and expensive to get wrong: they are arithmetic and lookups, not judgment calls.</p>
+<p><strong>How to check.</strong> Ask for the review record, not a summary of it. The page shows the form of the result — "Review passed (round 1)" — because a pass with no named items is not a check.</p>
+<h2>Self-check table</h2>
+<table><thead><tr><th>Step</th><th>Failure mode</th><th>The check that catches it</th></tr></thead><tbody>
+<tr><td>1. Lock population and endpoint</td><td>Denominator drifts between abstract and table</td><td>Row count printed by code, not typed</td></tr>
+<tr><td>2. Handle missing outcomes</td><td>Assumption hidden in prose</td><td>Sensitivity analysis as its own script and table</td></tr>
+<tr><td>3. Reproduce the estimate</td><td>Rounding or denominator mismatch</td><td>Cell-by-cell diff against the published table</td></tr>
+<tr><td>4. Figures and tables</td><td>Screen-resolution export; rebuilt table</td><td>Read the dpi; count table rules</td></tr>
+<tr><td>5. References</td><td>DOI resolves to another paper</td><td>Resolve each DOI; compare five fields</td></tr>
+<tr><td>6. Clean rerun</td><td>Order dependence; unpinned packages</td><td>Run from empty environment on a fresh machine</td></tr>
+<tr><td>7. Second review</td><td>Review with no named items</td><td>Ask for the four-item record</td></tr>
+</tbody></table>
+<h2>Three common misconceptions</h2>
+<p><strong>"Reproducible means rerunning in the same software."</strong> Stata's documentation is genuinely deep, and RStudio is genuinely free, but a documented environment reproduces the <em>tool's</em> behaviour, not your decisions. The population rule, the missing-data assumption and the model specification live in your code, or they live nowhere.</p>
+<p><strong>"The numbers match, so the analysis is right."</strong> Matching numbers prove the arithmetic repeats. They do not prove the endpoint is the trial's endpoint, that the population is the full analysis set, or that the sensitivity analysis was run. Step 7 exists because step 3 can pass while step 1 is wrong.</p>
+<p><strong>"A screenshot is evidence."</strong> A screenshot is a picture of a number. Evidence is the script, the input file, the printed denominator and the diff. If your archive has no code, you have a picture.</p>
+<h2>FAQ</h2>
+<p><strong>Is Stata reproducible out of the box?</strong> Its site describes accurate, reproducible results and documents the language across 19,000+ pages, which makes a rerun feasible. Whether your specific table reproduces still depends on your do-file, your data version and your rounding.</p>
+<p><strong>Do I need RStudio Pro to reproduce an analysis?</strong> No. The Open Source Edition is free under AGPL v3 and runs the same language. Pro adds commercial licensing and priority support, which are organisational questions rather than reproducibility ones.</p>
+<p><strong>How many references should a reanalysis verify?</strong> As many as it cites. The number in HumanPen's example is 11, checked one by one, and the point is the method — one DOI, one comparison — not the count.</p>
+<p><strong>What if my original analysis was done in SPSS or Stata?</strong> HumanPen's page states that analyses originally done in SPSS or Stata are performed using Python or R. That is a rewrite, so budget for the rerun in step 6 to be the first true test of the new code.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project — https://humanpen.net/projects, accessed 2026-11-24 (IST example: 19,435 patients; primary endpoint death or dependency at 6 months; about 150 missing outcomes in a sensitivity analysis; 62.2% vs 63.5%, OR 0.95 (0.89–1.00), P = 0.072; 300 dpi figures and three-line tables; PubMed DOI check for IST and CAST, Lancet 1997; four-item review including "All 11 references found, one by one" and a clean rerun; second AI review "Review passed (round 1)"; Python or R, with SPSS/Stata work redone).</li><li>Stata — features page, accessed 2026-11-24: https://www.stata.com/features/ (19,000+ pages of documentation).</li><li>Stata — home page, accessed 2026-11-24: https://www.stata.com/ (accurate, reproducible results and workflows).</li><li>Posit — RStudio IDE page, accessed 2026-11-24: https://posit.co/products/open-source/rstudio/ (Open Source Edition free, AGPL v3).</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=reproducible-ist-reanalysis-seven-steps">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=reproducible-ist-reanalysis-seven-steps">Start Project &rarr;</a></p></div>
+<div class="related"><strong>More comparisons</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/deliverable-chat-log-vs-report-package.html">Chat log or report package? The six-month test for an AI research deliverable, from HumanPen</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/editable-pptx-speaker-notes.html">A deck you can still edit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/file-limits-pages-vs-projects.html">Pages, megabytes or one total</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/graphpad-prism.html">GraphPad Prism vs HumanPen Start Project</a></li></ul></div>
+<div class="foot">Published by HumanPen. Competitor statements reflect their public pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

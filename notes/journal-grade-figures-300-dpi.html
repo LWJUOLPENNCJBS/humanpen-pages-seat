@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>300 dpi is not the hard part: journal figures in HumanPen, Origin, Prism and Julius</title>
+<meta name="description" content="Every journal says the same thing in its author guidelines: 300 dpi, TIFF or EPS, sans-serif labels, no chartjunk, a caption that stands alone. Almost nobody fails on the number. T">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-grade-figures-300-dpi.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="300 dpi is not the hard part: journal figures in HumanPen, Origin, Prism and Julius">
+<meta property="og:description" content="Every journal says the same thing in its author guidelines: 300 dpi, TIFF or EPS, sans-serif labels, no chartjunk, a caption that stands alone. Almost nobody fails on the number. T">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-grade-figures-300-dpi.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-grade-figures-300-dpi.html#article", "headline": "300 dpi is not the hard part: journal figures in HumanPen, Origin, Prism and Julius", "description": "Every journal says the same thing in its author guidelines: 300 dpi, TIFF or EPS, sans-serif labels, no chartjunk, a caption that stands alone. Almost nobody fails on the number. T", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-grade-figures-300-dpi.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">All comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>300 dpi is not the hard part: journal figures in HumanPen, Origin, Prism and Julius</h1>
+<p>Every journal says the same thing in its author guidelines: 300 dpi, TIFF or EPS, sans-serif labels, no chartjunk, a caption that stands alone. Almost nobody fails on the number. They fail on everything the number implies — the figure has to match the table, the table has to match the analysis, the caption has to match the analysis you actually ran, and all of it has to survive a copy editor who moves a panel.</p>
+<p>That is why "can it make a figure" is the wrong question. Design freedom and compliant delivery are two separate jobs, and the tools we looked at split along that line. Origin and Prism are built for the first: you shape the graph until it says what you mean. HumanPen is built for the second: the figure arrives at 300 dpi to journal standards, inside the document, next to the table it belongs to.</p>
+<p><em>Editorial disclosure: this article is published by HumanPen. Statements about OriginLab, GraphPad Prism and Julius come from their public pages as captured on 24 November 2026. Statements about HumanPen Start Project come from the public <code>/projects</code> page read the same day. No synthetic benchmark was run, and no figure-quality comparison is implied — we did not render the same data in four tools. Prices and packaging change; each vendor's site is the authority.</em></p>
+<h2>At a glance</h2>
+<table><thead><tr><th>Tool</th><th>What the figure step consists of</th><th>What you get back</th><th>What the public page states as the constraint</th></tr></thead><tbody>
+<tr><td><strong>OriginLab (Origin)</strong></td><td>Point-and-click graph building on top of the analysis, with results updating when data or parameters change.</td><td>Graphs and analyses that update with the data, exported when you need them.</td><td>Free 6-month Learning Edition for all students; a free Origin Viewer for colleagues without a licence; the purchase page did not render prices to our capture.</td></tr>
+<tr><td><strong>GraphPad Prism</strong></td><td>Analysis and graphing in one application, driven by the researcher.</td><td>Graphs and analyses produced in the session.</td><td>A free trial, with <code>No commitment or credit card required</code>; the pricing URL returned 404 to our capture, so no price is quoted here.</td></tr>
+<tr><td><strong>Julius</strong></td><td>Charts generated inside a general-purpose workspace that also produces presentations, reports and websites.</td><td>Charts and slides inside the workspace.</td><td>Credits: daily credits on Free, 2,000 monthly on Plus, 5,000 on Pro, 60,000 on Business; 7-day file storage from Free through Business.</td></tr>
+<tr><td><strong>Stata</strong></td><td>Analysis and graphics from the command line or from scripts; the feature list includes forest, funnel and interaction plots and a graphical tables builder.</td><td>Graphs produced from the analysis commands.</td><td>Documentation runs to 19,000 pages with formulas and worked examples; the purchase page carried cart and maintenance line items, which we do not treat as product pricing.</td></tr>
+<tr><td><strong>JASP</strong></td><td>A free, cross-platform GUI with plots such as raincloud, funnel and Bland-Altman, plus Flexplot.</td><td>Graphs and tables that the page says can be copied into Word in APA format.</td><td>Free; the page describes copying graphs and tables directly into Word.</td></tr>
+<tr><td><strong>HumanPen Start Project</strong></td><td>Figures are produced from the analysis and delivered inside the report, not exported from a separate graphing application.</td><td>300 dpi figures to journal standards, three-line tables with captions, inside a <code>.docx</code>; plus <code>.pptx</code> with speaker notes.</td><td>A second AI reviews before delivery, including a clean rerun that must reproduce results exactly; data intake up to 5 GB total.</td></tr>
+</tbody></table>
+<h2>Design freedom and compliance are different jobs</h2>
+<p>A figure has two audiences, and they want opposite things.</p>
+<p>The first audience is you, at 11 p.m., deciding whether the error bars are readable at column width. That audience needs direct manipulation: grab the axis, change the symbol, rotate the label, try a different panel layout. Origin and Prism are excellent at this, and it is not a small thing — a figure that has been looked at closely is usually a better figure.</p>
+<p>The second audience is a production editor who will place your figure at 84 mm wide, in greyscale, in a template you have never seen. That audience needs things you cannot see on screen: sufficient resolution, a font that survives, no reliance on colour alone, and a caption that does not refer to "the red line". Serving that audience is a checking job, not a drawing job.</p>
+<p>Most figure problems in submitted manuscripts are the second kind. The graph looked fine; the file came out at screen resolution after the export dialog reset; the caption still described the model that was dropped in revision two.</p>
+<h2>OriginLab: the graph as a live object</h2>
+<p>Origin's public features page is unusually specific about what makes its graphs different, and one sentence is the heart of it: graphs and analysis results can automatically update on data or parameter change, which lets you create templates for repetitive tasks or run batch operations from the interface without programming.</p>
+<p>That is a stronger claim than "it makes nice plots". A graph that updates with its data is a graph that cannot drift out of step with the analysis behind it, which removes the most common source of figure-table mismatch. Around that core, the page describes a point-and-click interface with batch operations, over 100 built-in and extended graph types, template saving and graph themes, and extension through scripting and C, an embedded Python, or the R console, with connections to MATLAB, LabVIEW and Microsoft Excel.</p>
+<p>The access terms are worth noting for a lab: a free 6-month Learning Edition for all students, and a free Origin Viewer 10.4.0 so a colleague without a licence can open an OPJ or OPJU file. The purchase page we captured did not render prices, so we quote none.</p>
+<p>Where the page is silent is on journal compliance as a service. It describes publication-quality graphs and the tools to customise them; it does not describe a per-journal checklist, a caption workflow or a delivery inside a manuscript file. That is not a gap in the product so much as a difference in kind: Origin gives you the instrument, and the compliance judgement stays with you.</p>
+<h2>GraphPad Prism: the trial, and what we will not invent</h2>
+<p>Prism's page puts the free trial in the position of the main offer, in a sentence that is refreshingly unambiguous: <code>No commitment or credit card required</code>. For figure work, that is the right commercial design, because nobody can tell from a feature list whether a plotting package suits their hand.</p>
+<p>The page we captured describes Prism as software for analysis and graphing, with the trial as the entry point. Our request to the pricing URL returned a 404, so this article quotes no Prism price at all — a missing number is better than an invented one, particularly in a comparison.</p>
+<p>What the page does not describe is a delivered manuscript artefact: there is no description of a report, a caption set or a figure package assembled to a journal's specification. Prism's model is a researcher in an application, and the output is what that researcher exports.</p>
+<h2>Julius: charts inside a general workspace</h2>
+<p>Julius is the interesting case in this comparison, because it is not a graphing package at all. Its pricing page describes one AI workspace for analysis and creation: analyse data and research, create presentations, generate reports and dashboards, build websites, generate images and video. Charts appear as one thing the workspace produces, alongside the slides that will carry them.</p>
+<p>Access is metered in credits — daily credits on Free, 2,000 monthly on Plus at $20 per month, 5,000 on Pro at $45 per month, 60,000 on Business at $450 per month — with 7-day file storage from Free through Business. That metering makes the cost of a chart-and-slide iteration legible, which is a real advantage when you are still deciding what the figure should say.</p>
+<p>The page describes charts, presentations and reports as outputs of the workspace. It does not describe a 300 dpi journal specification, a three-line table convention or a caption set, so we make no claim either way about those. What it does describe is breadth: the same session can end in a slide, a report or a website.</p>
+<h2>How HumanPen handles this step</h2>
+<p>HumanPen starts from the other end. The figure is not a file you export; it is part of the deliverable list. The page describes a <code>.docx</code> report with 300 dpi figures to journal standards, three-line tables with captions, a <code>.pptx</code> with speaker notes, and the code that produced the numbers.</p>
+<p>Three consequences follow, and they are worth being explicit about because they are the trade.</p>
+<p><strong>The figure is produced from the analysis, not after it.</strong> The analysis runs in Python or R in an isolated sandbox; the figure is a rendering of that output. When the report says 62.2% versus 63.5%, P = 0.072, the figure beside it comes from the same run — which is why the review can check that every analysis population adds up and that a clean rerun reproduces the results exactly.</p>
+<p><strong>Compliance is a checklist, not a taste.</strong> 300 dpi is a resolution; "to journal standards" is a set of decisions about type size, line weight, panel labelling and colour that a second reader can check. The caption is written to stand alone, and the three-line table follows the convention most journals in the biomedical and social sciences expect.</p>
+<p><strong>You give up the hand on the axis.</strong> There is no canvas to nudge. If the figure needs to be restyled for a second journal, that is a revision: state the scope, confirm it, receive a new version, keep the old one. For a lab that restyles the same figure five times for five submissions, that is a worse deal than a graphing application, and it is honest to say so.</p>
+<p>The delivery format matters more than it sounds. A figure delivered as a separate <code>.png</code> has to be re-placed, re-captioned and re-checked by whoever assembles the manuscript. A figure delivered inside the <code>.docx</code>, with its caption attached and its table adjacent, arrives already in the state the document needs.</p>
+<h2>Decision rules</h2>
+<p><strong>Use a graphing application when the figure is the argument.</strong> Dose-response curves you need to inspect, a multi-panel figure whose layout carries meaning, a colour scheme you will defend in a talk — Origin's live graphs and Prism's trial-and-shape model are built for exactly this, and the free student terms make the evaluation cheap.</p>
+<p><strong>Use a general workspace when the figure is one output among several.</strong> A chart that will also appear in a deck, a report and a dashboard, produced in an afternoon from a dataset you are still exploring: Julius describes that breadth directly, and credit metering makes the iteration visible.</p>
+<p><strong>Commission the document when the figure has a destination.</strong> A submission, a chapter, a report where the figure is figure 2 of 6 and must agree with table 2. Here the value is not the drawing; it is that the resolution, the table convention, the caption and the numbers all come from one run, checked before delivery.</p>
+<p>The failure to avoid is a beautiful figure of the wrong endpoint, produced in an application that had no view of the table it had to match.</p>
+<h2>FAQ</h2>
+<p><strong>Does OriginLab offer a free version?</strong> It offers a free 6-month Learning Edition for all students, and a free Origin Viewer 10.4.0 for people who need to open OPJ or OPJU files without a licence. The purchase page we captured did not render prices, so we quote none.</p>
+<p><strong>Is GraphPad Prism free to try?</strong> Yes. The page states that you can start using Prism for free today with <code>No commitment or credit card required</code>. Its pricing URL returned a 404 to our capture, so no Prism price appears in this article.</p>
+<p><strong>Can Julius produce a 300 dpi figure to a journal's specification?</strong> Its pricing page describes charts, presentations and reports as outputs of the workspace. It does not describe a 300 dpi journal specification, a three-line table convention or a caption workflow, so we make no claim either way.</p>
+<p><strong>Why deliver figures inside a Word file rather than as separate images?</strong> Because the caption, the table and the number have to agree, and separate files arrive without that agreement attached. HumanPen's stated delivery puts the 300 dpi figures and the three-line tables inside the <code>.docx</code>, with a second AI checking the numbers before it goes out.</p>
+<h2>Sources</h2>
+<ul><li>OriginLab — home page, accessed 2026-11-24: https://www.originlab.com/ (free 6-month Learning Edition for all students; free Origin Viewer 10.4.0; point-and-click interface with batch operations).</li><li>OriginLab — Origin product and features page, accessed 2026-11-24: https://www.originlab.com/index.aspx?go=PRODUCTS/Origin (graphs and analysis results update on data or parameter change; templates and batch without programming; over 100 graph types; embedded Python, R console, scripting and C; MATLAB, LabVIEW and Excel connections).</li><li>OriginLab — purchase page, accessed 2026-11-24: https://www.originlab.com/index.aspx?go=PURCHASE (no prices rendered to our capture).</li><li>GraphPad — home page, accessed 2026-11-24: https://www.graphpad.com/ (free trial; <code>No commitment or credit card required</code>).</li><li>GraphPad — pricing page, requested 2026-11-24: https://www.graphpad.com/pricing/ (returned 404; no prices captured).</li><li>Julius — pricing page, accessed 2026-11-24: https://julius.ai/pricing (one workspace for analysis, presentations, reports, dashboards and websites; 2,000 credits monthly on Plus at $20 per month; 5,000 on Pro at $45 per month; 60,000 on Business at $450 per month; 7-day file storage).</li><li>HumanPen Start Project — https://humanpen.net/projects, accessed 2026-11-24 (300 dpi figures to journal standards; three-line tables and captions; <code>.docx</code> and <code>.pptx</code> deliverables; second-AI review including a clean rerun; 5 GB total intake; Python or R).</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=journal-grade-figures-300-dpi">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=journal-grade-figures-300-dpi">Start Project &rarr;</a></p></div>
+<div class="related"><strong>More comparisons</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/deliverable-chat-log-vs-report-package.html">Chat log or report package? The six-month test for an AI research deliverable, from HumanPen</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/editable-pptx-speaker-notes.html">A deck you can still edit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/file-limits-pages-vs-projects.html">Pages, megabytes or one total</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/graphpad-prism.html">GraphPad Prism vs HumanPen Start Project</a></li></ul></div>
+<div class="foot">Published by HumanPen. Competitor statements reflect their public pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>
