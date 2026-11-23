@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JabRef vs HumanPen Citation Fix: BibTeX at the Source vs a Pass Over the Finished DOCX</title>
+<meta name="description" content="JabRef manages BibTeX and cites as you write in LaTeX editors. HumanPen Citation Fix converts a finished .docx to 12 styles, 5 credits per 1,000 words.">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/jabref-vs-humanpen-citation-fix.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JabRef vs HumanPen Citation Fix: BibTeX at the Source vs a Pass Over the Finished DOCX">
+<meta property="og:description" content="JabRef manages BibTeX and cites as you write in LaTeX editors. HumanPen Citation Fix converts a finished .docx to 12 styles, 5 credits per 1,000 words.">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/jabref-vs-humanpen-citation-fix.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/jabref-vs-humanpen-citation-fix.html#article", "headline": "JabRef vs HumanPen Citation Fix: BibTeX at the Source vs a Pass Over the Finished DOCX", "description": "JabRef manages BibTeX and cites as you write in LaTeX editors. HumanPen Citation Fix converts a finished .docx to 12 styles, 5 credits per 1,000 words.", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/jabref-vs-humanpen-citation-fix.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/">HumanPen</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-functions-index.html">All comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>JabRef vs HumanPen Citation Fix: BibTeX at the Source vs a Pass Over the Finished DOCX</h1>
+<h2>Short answer</h2>
+<p>Choose JabRef when your bibliography is a BibTeX file and your document is compiled from LaTeX. Its public page describes a free and open source reference manager with import options for over 15 reference formats, bibliographic data fetched from ISBN, DOI, PubMed-ID, or arXiv-ID, one-click import through a browser extension, hierarchical collections with keyword, tag, and search organisation, native BibTeX and BibLaTeX support, and cite-as-you-write for Emacs, Kile, LyX, Texmaker, TeXstudio, Vim, and WinEdt.</p>
+<p>Choose HumanPen Citation Fix when the deliverable is a Word file and the citation style must change after the writing is done. It takes a <code>.docx</code>, converts the in-text citations and the reference list to a target style — 12 named on the page, including APA, MLA, Chicago, IEEE, GB/T 7714, Vancouver, AMA, ACS, OSCOLA, and Harvard in author-date and notes variants — and returns an editable DOCX with fonts, headings, numbering, and layout preserved. The prose is untouched. 1,000 words costs 5 credits.</p>
+<p>The split is clean: JabRef's public page is a desktop, BibTeX-oriented reference manager and does not describe converting a finished DOCX across bibliography styles. HumanPen's page describes exactly that conversion, and nothing about managing a <code>.bib</code> database. One tool works on the source of the citation; the other works on the document that already contains it.</p>
+<p><em>Editorial disclosure: this article is published by HumanPen, which sells the function described. JabRef statements come from its public pages read 24 November 2026; HumanPen statements come from the public <code>/citation-format-correction</code> page read the same day. No synthetic head-to-head benchmark was run and no document was processed through both tools for scoring. It covers documented workflows, inputs and outputs, and pricing as published only.</em></p>
+<hr>
+<h2>Dimension-by-dimension</h2>
+<table><thead><tr><th>Dimension</th><th>JabRef (public pages)</th><th>HumanPen Citation Fix</th></tr></thead><tbody>
+<tr><td><strong>Licence and form</strong></td><td>Free and open source; a desktop reference manager.</td><td>A hosted function inside the HumanPen web app (credits also work via API).</td></tr>
+<tr><td><strong>Job in the workflow</strong></td><td>Manage BibTeX/BibLaTeX entries and cite them while writing.</td><td>Convert a finished document's citations and reference list.</td></tr>
+<tr><td><strong>Primary object</strong></td><td>A <code>.bib</code> database of entries.</td><td>One <code>.docx</code> file and the reference list inside it.</td></tr>
+<tr><td><strong>When it runs</strong></td><td>Before and during writing, from the editor.</td><td>After the document is finished.</td></tr>
+<tr><td><strong>Import breadth</strong></td><td>Import options for over 15 reference formats; one-click browser extension.</td><td>No import step: the reference list in the DOCX is the input.</td></tr>
+<tr><td><strong>Metadata fetching</strong></td><td>From ISBN, DOI, PubMed-ID, arXiv-ID.</td><td>Not described; the page covers style conversion only.</td></tr>
+<tr><td><strong>Write-time integration</strong></td><td>Cite-as-you-write for Emacs, Kile, LyX, Texmaker, TeXstudio, Vim, WinEdt.</td><td>None. Nothing is inserted into a draft.</td></tr>
+<tr><td><strong>Organisation</strong></td><td>Hierarchical collections; keyword, tag, and search organisation.</td><td>Not described.</td></tr>
+<tr><td><strong>Style handling, as stated</strong></td><td>Native BibTeX and BibLaTeX support; conversion of a finished DOCX across styles is not described.</td><td>12 styles named: APA, MLA, Chicago, IEEE, GB/T 7714, Vancouver, AMA, ACS, OSCOLA, Harvard (author-date and notes variants), and more per page.</td></tr>
+<tr><td><strong>Output</strong></td><td>Entries in a <code>.bib</code> file; formatted citations in a compiled document.</td><td>Editable DOCX with fonts, headings, numbering, and layout preserved.</td></tr>
+<tr><td><strong>Pricing shape</strong></td><td>Free and open source.</td><td>Credits that never expire; 1,000 words costs 5 credits; 100 free credits on a new account; failed or cancelled jobs never charged.</td></tr>
+<tr><td><strong>Retention</strong></td><td>A database file you hold.</td><td>Job files kept 7 days then removed; the job record stays.</td></tr>
+</tbody></table>
+<hr>
+<h2>Where the two tools actually diverge</h2>
+<h3>1. Which artefact is the source of truth</h3>
+<p>For JabRef the answer is the <code>.bib</code> file. Everything follows from it: an entry with a DOI can be re-fetched, an entry filed in the wrong hierarchical collection can be moved, a style change re-renders from fields that were always there. The document is an output of the database.</p>
+<p>For HumanPen Citation Fix the document is the input. There is no database, no field structure, no DOI to re-fetch. The reference list is prose — a list of strings that happen to describe sources — and the operation rewrites those strings into the target convention.</p>
+<p>This changes what "fixing" means. In a BibTeX workflow, fixing a wrong author name in one place fixes it everywhere the entry is cited. In a document-level pass, the same name appears in the in-text markers and in the reference list, and consistency depends on what was typed. A conversion can conform both to the target punctuation; it cannot know that the two spellings were meant to be one person.</p>
+<h3>2. Two editor ecosystems, two different bottlenecks</h3>
+<p>JabRef's write-time integrations are all in the LaTeX world: Emacs, Kile, LyX, Texmaker, TeXstudio, Vim, WinEdt. That is a coherent design — the citation command is compiled, and the bibliography style is a line in the preamble. Change <code>\bibliographystyle</code> and recompile.</p>
+<p>HumanPen Citation Fix accepts <code>.docx</code> only. That is equally coherent: the tool exists because a Word file has no preamble to change. In a Word document there is no field to re-render, no <code>.bst</code> file, no compile step. There is formatted text, and the only way to change its citation convention is to rewrite the text.</p>
+<p>So the bottleneck each tool removes is different. In LaTeX the awkward part is metadata quality — hence JabRef's identifier lookups and over 15 import formats. In Word the awkward part is that the references have gone stale as text — hence a pass that reads and rewrites them.</p>
+<h3>3. Local file versus a hosted job</h3>
+<p>JabRef is a desktop application you install; the database lives in a file you hold, and the licence is open source.</p>
+<p>Citation Fix is a hosted operation with a job lifecycle: upload a <code>.docx</code>, wait for the converted file, and the job files are kept 7 days and then removed while the job record stays. HumanPen states that data is encrypted in transit, never used for training, and deletable.</p>
+<p>Those postures differ, and the choice is usually institutional rather than technical. A lab that must keep everything on a local disk will prefer the file. A researcher who needs a conversion on a borrowed laptop late at night, with nothing to install, will prefer the job.</p>
+<hr>
+<h2>When to choose which (or use both)</h2>
+<p><strong>Choose JabRef</strong> if the thesis or paper is compiled from LaTeX, if your field expects a <code>.bib</code> file, if you need BibTeX and BibLaTeX natively, or if the requirement is that the tool be free and open source.</p>
+<p><strong>Choose HumanPen Citation Fix</strong> if the document is a <code>.docx</code> and the style is the problem. Typical cases: a Word manuscript that must move from APA to IEEE; a thesis that has to be delivered in GB/T 7714; a journal resubmission needing Vancouver; a file where the reference list was pasted from several sources and now matches none of them.</p>
+<p><strong>Use both.</strong> Keep the database in JabRef, generate the bibliography for the LaTeX version there, and when the same work has to go out as a Word document in a different style, run one Citation Fix pass over the exported <code>.docx</code>. The <code>.bib</code> stays authoritative for the sources; the DOCX becomes authoritative for that particular submission.</p>
+<p><strong>A note on the join.</strong> Neither page describes a <code>.bib</code>-to-Word path; the route is to produce the DOCX with a bibliography in it, then convert that.</p>
+<hr>
+<h2>FAQ</h2>
+<p><strong>Does JabRef convert a finished DOCX from one citation style to another?</strong> Its public page describes a desktop, BibTeX-oriented reference manager with cite-as-you-write for a set of LaTeX editors. It does not describe converting a finished DOCX across bibliography styles.</p>
+<p><strong>Does HumanPen Citation Fix read <code>.bib</code> files?</strong> No. Input is <code>.docx</code> only. The reference list inside the document is what gets converted.</p>
+<p><strong>How much does Citation Fix cost?</strong> 1,000 words costs 5 credits, the cheapest operation HumanPen offers. Credits never expire and work in the web app and the API. New accounts get 100 free credits, and failed or cancelled document jobs are never charged.</p>
+<p><strong>What is preserved in the returned file?</strong> Fonts, headings, numbering, and layout, in an editable DOCX. The rest of the text is left unchanged; only the in-text citations and the reference list are rewritten.</p>
+<p><strong>Is my document retained?</strong> Job files are kept 7 days and then removed; the job record stays. Data is encrypted in transit, never used for training, and deletable.</p>
+<hr>
+<h2>Sources</h2>
+<ul><li>JabRef home page — https://www.jabref.org/ — accessed 24 November 2026 (free and open source; import options for over 15 reference formats; data fetched from ISBN, DOI, PubMed-ID, arXiv-ID; browser extension for one-click import; native BibTeX and BibLaTeX; cite-as-you-write for Emacs, Kile, LyX, Texmaker, TeXstudio, Vim, WinEdt; hierarchical collections and keyword/tag/search organisation).</li><li>HumanPen Citation Fix — https://humanpen.net/citation-format-correction — accessed 24 November 2026 (in-text citations and reference list converted to a target style, rest of text unchanged; 12 styles; <code>.docx</code> in, editable DOCX out with fonts, headings, numbering, layout preserved; 1,000 words costs 5 credits; job files kept 7 days then removed, job record stays).</li></ul>
+<p><a href="https://humanpen.net/citation-format-correction?utm_source=jabref-vs-humanpen-citation-fix">Try HumanPen</a></p>
+<div class="cta"><p style="margin:0 0 8px">HumanPen Citation Fix works on a whole document and returns the same editable file. Credits never expire; a failed job is not charged.
+</p><p style="margin:0"><a href="https://humanpen.net/citation-format-correction?utm_source=jabref-vs-humanpen-citation-fix">Open HumanPen Citation Fix &rarr;</a></p></div>
+<div class="related"><strong>More comparisons</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/bibguru-vs-humanpen-citation-fix.html">BibGuru vs HumanPen Citation Fix</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/mendeley-vs-humanpen-citation-fix.html">Mendeley vs HumanPen Citation Fix</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/zotero-vs-humanpen-citation-fix.html">Zotero vs HumanPen Citation Fix</a></li></ul></div>
+<div class="foot">Published by HumanPen. Competitor statements reflect their public pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen: <a href="https://humanpen.net/">humanpen.net</a>.</div>
+</main>
+</div>
+</body>
+</html>
