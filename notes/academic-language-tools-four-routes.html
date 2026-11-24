@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sentence-level language tools versus a document-level rewrite: four options compared</title>
+<meta name="description" content="Most academic writing tools work on one sentence at a time. You put the cursor somewhere, you get a suggestion, you accept or ignore it. Grammarly, Writefull and Trinka all live in">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/academic-language-tools-four-routes.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sentence-level language tools versus a document-level rewrite: four options compared">
+<meta property="og:description" content="Most academic writing tools work on one sentence at a time. You put the cursor somewhere, you get a suggestion, you accept or ignore it. Grammarly, Writefull and Trinka all live in">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/academic-language-tools-four-routes.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/academic-language-tools-four-routes.html#article", "headline": "Sentence-level language tools versus a document-level rewrite: four options compared", "description": "Most academic writing tools work on one sentence at a time. You put the cursor somewhere, you get a suggestion, you accept or ignore it. Grammarly, Writefull and Trinka all live in", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/academic-language-tools-four-routes.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index-batch-c.html">All comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Sentence-level language tools versus a document-level rewrite: four options compared</h1>
+<h2>Short answer</h2>
+<p>Most academic writing tools work on one sentence at a time. You put the cursor somewhere, you get a suggestion, you accept or ignore it. Grammarly, Writefull and Trinka all live in that model, with different specialisations: general clarity and tone, journal-calibrated academic English, and academic integrity plus plagiarism checking.</p>
+<p>HumanPen works on a different unit: the whole document. It imports a report, rewrites only the passages marked as flagged, and returns the file with its original styling untouched — DOCX, PPTX or TXT, with no word limit.</p>
+<p>The choice hinges on one question: do you need better sentences, or do you need a whole file changed while everything else stays exactly as it was?</p>
+<h2>Editorial disclosure</h2>
+<p>Written by HumanPen. Grammarly, Writefull and Trinka facts are quoted from their own pages as read on 2026-11-24 and are not independently audited. HumanPen facts come from humanpen.net (home and projects), read the same day. No prices are quoted from any vendor.</p>
+<h2>Four tools, four units of work</h2>
+<table><thead><tr><th>Dimension</th><th>Grammarly</th><th>Writefull</th><th>Trinka</th><th>HumanPen</th></tr></thead><tbody>
+<tr><td>Unit of work</td><td>Sentence and paragraph, as you type</td><td>Sentence, inside Word or Overleaf</td><td>Sentence and document, with integrity checks</td><td>The whole file</td></tr>
+<tr><td>Specialisation</td><td>General clarity, tone, correctness</td><td>Academic English calibrated on journal literature</td><td>Academic writing plus integrity and plagiarism checks</td><td>Targeted rewrite of flagged passages</td></tr>
+<tr><td>Where it runs</td><td>Editor, browser, desktop apps</td><td>Word, Overleaf (LaTeX), upload for a full check</td><td>Web editor and integrations</td><td>Web app and API</td></tr>
+<tr><td>Handles LaTeX</td><td>Not the focus</td><td>Yes, inside Overleaf</td><td>Not the focus</td><td>Not the focus</td></tr>
+<tr><td>Preserves layout</td><td>N/A — you edit in place</td><td>Track Changes in the revised document</td><td>N/A</td><td>Original styling untouched</td></tr>
+<tr><td>Citation handling</td><td>No</td><td>Terminology-aware but not a citation fixer</td><td>No</td><td>Citations, numbers and claim strength kept exactly</td></tr>
+<tr><td>Plagiarism or similarity check</td><td>No</td><td>No</td><td>Plagiarism checks are part of its plans</td><td>Imports a similarity report to target the rewrite</td></tr>
+<tr><td>Privacy posture as stated</td><td>Does not sell or monetise content; third-party providers may not train on user content</td><td>Texts and searches not stored or used for training; encrypted connection</td><td>Instant data deletion and no AI training stated on its plans</td><td>Isolated sandbox, never shared across users, not used for training, deletable</td></tr>
+<tr><td>Scale evidence</td><td>40 million people and 50,000 organizations, per the vendor</td><td>Language models trained on millions of journal articles</td><td>Used by universities as an integrity solution</td><td>DOCX, PPTX and TXT with no word limit</td></tr>
+<tr><td>Best fit</td><td>Everyday clarity, including non-academic writing</td><td>Non-native speakers writing papers in Word or LaTeX</td><td>Institutions that need integrity tooling alongside language help</td><td>A flagged document that must come back structurally identical</td></tr>
+</tbody></table>
+<h2>The unit-of-work difference is not cosmetic</h2>
+<p>A sentence-level tool assumes you will read every suggestion. That is the right assumption for an abstract you are polishing, and the wrong one for a three-hundred-page thesis on a deadline.</p>
+<p>A document-level rewrite assumes the opposite: that most of the document is fine and only specific passages need to change. HumanPen's page states the mechanism — import a similarity report, and only the flagged passages are rebuilt. It also states the guardrail: numbers, units, formulas, citations, terminology and the strength of a claim stay as they were, and the product does not introduce typos or grammar errors to defeat detectors.</p>
+<p>That guardrail is the interesting part. It means the tool is deliberately bad at one thing people sometimes want — making text look less machine-written by degrading it — and deliberately good at preserving the parts a reviewer will check.</p>
+<h2>What each tool is genuinely better at</h2>
+<p><strong>Grammarly</strong> is the broadest. Its page is about clarity, credibility and tone in any writing, with security statements aimed at organisations: content is not sold or monetised, and third-party providers may not train on user content. It also cites a SOC 2 Type 2 report. If your writing problem spans email, grant summaries and papers, one tool that covers all three has real value.</p>
+<p><strong>Writefull</strong> is the most academic-specific of the three. Its edits come from language models trained on journal articles, it works inside Word and inside Overleaf's LaTeX editor, and its paraphraser offers rewrites at several levels while the Academizer converts informal phrasing into academic register. For a non-native speaker drafting in LaTeX, that integration is the deciding feature.</p>
+<p><strong>Trinka</strong> bundles language help with integrity tooling. Its plans include plagiarism-check allowances and AI writing requests, it states instant data deletion and no AI training, and it positions itself to universities as an academic integrity solution. If your institution is buying, that framing matters more than sentence quality.</p>
+<h2>Where document-level rewriting is the only thing that works</h2>
+<p>Consider the specific artefact: a submitted manuscript whose similarity report came back with flagged paragraphs scattered across methods and discussion. Every sentence around them is fine. The formatting is a journal template. References are numbered in a house style that took a week to get right.</p>
+<p>A sentence-level tool would have you accept or reject suggestions across hundreds of paragraphs, in an editor, in a document whose layout you then have to re-verify.</p>
+<p>A document-level rewrite does one pass on the flagged passages and returns the file with styling intact. HumanPen states exactly that, and adds a second-round rule: if a re-check still shows 20% or higher, import the new report and the remaining flagged passages are rewritten at no extra credit cost.</p>
+<p>Notice what is absent from that promise: no claim about what a detector will report. That is the honest boundary, and any vendor promising a score is selling something they cannot control.</p>
+<h2>Constraints before you commit</h2>
+<ul><li>HumanPen intake accepts Excel, CSV, Word, PDF and zip up to 5 GB total for projects; document tools take DOCX, PPTX and TXT with no word limit.</li><li>HumanPen projects are kept six months after last activity with a reminder three days before expiry, and can be deleted at any time.</li><li>HumanPen is not a grammar checker for everyday writing; it targets documents, not emails.</li><li>Trinka's plans meter usage by pages and AI requests, so heavy drafting may hit plan limits faster than expected — check the allowance against your actual volume.</li></ul>
+<h2>When to choose each</h2>
+<ul><li><strong>Grammarly</strong> — writing across formats, teams that need org-wide consistency and a security story.</li><li><strong>Writefull</strong> — non-native speakers writing papers in Word or LaTeX who want journal-calibrated suggestions.</li><li><strong>Trinka</strong> — an institution that needs language help and integrity tooling in one procurement.</li><li><strong>HumanPen</strong> — a flagged document that must come back structurally identical, or a whole file that needs rewriting without touching layout.</li></ul>
+<h2>FAQ</h2>
+<p><strong>Can HumanPen replace Grammarly?</strong> No. It rewrites documents at passage level; it does not coach your everyday writing.</p>
+<p><strong>Will a rewritten passage pass a similarity check?</strong> No vendor can promise a score, and this article does not. What HumanPen offers is a second free round on the remaining flagged passages if a re-check still shows 20% or higher.</p>
+<p><strong>Does Writefull work outside Word and Overleaf?</strong> Its page describes in-editor feedback in Word and LaTeX in Overleaf, plus an upload-based check for submission.</p>
+<p><strong>Which one preserves my template?</strong> HumanPen states the file returns with its original styling untouched; Writefull uses Track Changes within your document, which is a different mechanism with a different review experience.</p>
+<h2>Sources</h2>
+<ul><li>Grammarly — https://www.grammarly.com/ — read 2026-11-24.</li><li>Writefull — https://www.writefull.com/ — read 2026-11-24.</li><li>Trinka — https://www.trinka.ai/ — read 2026-11-24.</li><li>HumanPen — https://humanpen.net/ — read 2026-11-24.</li><li>HumanPen Start Project — https://humanpen.net/projects — read 2026-11-24.</li></ul>
+<p>If the document is flagged and the template must survive, <a href="https://research.humanpen.net/?utm_source=academic-language-tools-four-routes">try a document pass</a> with 100 free credits on registration.</p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=academic-language-tools-four-routes">Start Project &rarr;</a></p></div>
+<div class="related"><strong>More comparisons</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/editage-vs-humanpen-projects.html">Editage vs HumanPen Start Project</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/endnote-vs-humanpen-projects.html">EndNote vs HumanPen Start Project</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/literature-triage-four-routes.html">From a research question to an evidence table</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/major-revision-four-workstreams.html">Major revision, four workstreams</a></li></ul></div>
+<div class="foot">Published by HumanPen. Competitor statements reflect their public pages as read on 24 and 25 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>
