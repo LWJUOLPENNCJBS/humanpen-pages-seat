@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>From a supervisor&#x27;s tracked-changes file to a clean submission with HumanPen</title>
+<meta name="description" content="A supervisor returns a DOCX full of insertions, deletions and comments. The science is settled and the piece is still not submittable, because a submission system will not accept o">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/tracked-changes-file-to-clean-submission.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="From a supervisor&#x27;s tracked-changes file to a clean submission with HumanPen">
+<meta property="og:description" content="A supervisor returns a DOCX full of insertions, deletions and comments. The science is settled and the piece is still not submittable, because a submission system will not accept o">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/tracked-changes-file-to-clean-submission.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/tracked-changes-file-to-clean-submission.html#article", "headline": "From a supervisor's tracked-changes file to a clean submission with HumanPen", "description": "A supervisor returns a DOCX full of insertions, deletions and comments. The science is settled and the piece is still not submittable, because a submission system will not accept o", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/tracked-changes-file-to-clean-submission.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>From a supervisor's tracked-changes file to a clean submission with HumanPen</h1>
+<p>A supervisor returns a DOCX full of insertions, deletions and comments. The science is settled and the piece is still not submittable, because a submission system will not accept other people's markup. Turning that file into a clean copy is a document problem with a data problem inside it: you must accept the right changes and keep the numbers intact. This page describes the pass and shows where HumanPen's document tools fit, and where they do not.</p>
+<p>The relevant promise is about the file. HumanPen states that DOCX, PPTX and TXT files return editable with original styling untouched, however long the document, and that bold, links, styles, tables and numbering are kept. Numbers, units, formulas, citations, terminology and claim strength are protected during a wording pass. Those statements are about preserving a document, not about deciding which reviewer comment was right — that decision stays with you.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. Credit use depends on the work you confirm, so no total price is quoted here.</em></p>
+<h2>The jobs in a marked-up file</h2>
+<table><thead><tr><th>Mark in the file</th><th>What it means</th><th>Your decision</th><th>What a tool must not do</th></tr></thead><tbody>
+<tr><td>Insertion</td><td>Proposed new wording</td><td>Accept or reject</td><td>Change a number while accepting</td></tr>
+<tr><td>Deletion</td><td>Proposed removal</td><td>Accept or reject</td><td>Delete a citation you meant to keep</td></tr>
+<tr><td>Comment</td><td>A question, not text</td><td>Answer it, then remove it</td><td>Turn a comment into body text</td></tr>
+<tr><td>Formatting change</td><td>A style preference</td><td>Accept or ignore</td><td>Flatten the heading structure</td></tr>
+<tr><td>Number edit</td><td>A corrected value</td><td>Verify against the source</td><td>Propagate a typo</td></tr>
+<tr><td>Citation edit</td><td>A source change</td><td>Check the reference exists</td><td>Renumber silently</td></tr>
+<tr><td>Claim-strength edit</td><td>A hedging change</td><td>Check it matches the evidence</td><td>Strengthen beyond the data</td></tr>
+</tbody></table>
+<p>The first three rows are markup to resolve. The last four are content changes hiding inside markup, and they are where a clean-up pass can do damage if it is blind to the protected elements.</p>
+<h2>Step one: resolve the changes as a person</h2>
+<p>Before any tool touches the file, accept or reject the tracked changes in your word processor. There is no shortcut for this, because each decision is a judgement about your own argument. Work through the document once with comments visible and answer each one, either in the comment thread or by making the change and then deleting the comment.</p>
+<p>Pay particular attention to edits touching numbers and claim strength. A supervisor who changes "was associated with" to "caused" may be asking a question rather than asserting a fact. A corrected value in a results table must match the analysis file, not just look plausible. The public review example is a useful model for the standard: a primary endpoint that matches, populations that add up, a rerun that reproduces the results, and every reference found.</p>
+<p>Once the file has no visible markup, you have a clean copy with the accepted decisions baked in. That is the input for a document pass. Feeding a still-marked file into a rewrite risks treating insertions, deletions and comments as prose.</p>
+<h2>Step two: keep the decision record</h2>
+<p>A clean file loses the history of what was decided. Keep it somewhere else. A short table with the comment, your decision and the reason is enough, and it saves an argument at proof stage when a co-author asks why a sentence changed. In a Start Project, the equivalent record is the version history: revisions are requested in the project, the scope is explained first, work starts after confirmation, a new version is delivered and past versions are kept.</p>
+<p>If the supervisor's markup produced enough changes that the prose now reads unevenly, this is the point to consider a targeted wording pass. HumanPen's humanize surface rewrites passages you select or passages flagged by an imported report, and charges only for the words actually rewritten. Selecting only the paragraphs that changed keeps the rest of the accepted manuscript untouched.</p>
+<h2>Step three: the wording pass, with protected elements on</h2>
+<p>The stated method of the wording pass is to rebuild phrasing naturally while keeping numbers, units, formulas, citations, terminology and the strength of a claim exactly as they were. The page also says that deliberate typos and grammar errors are not introduced to fool detectors. That is a good description of the boundary for this job: the tool may make a sentence read cleanly, but it may not change what the sentence claims.</p>
+<p>After the pass, verify the format layer. The file should still be a DOCX, with headings, bold, links, tables and numbering in place and the original table layout kept. Open a multi-page table and an equation, not just the first paragraph. If the supervisor had reformatted a section, that reformatting is preserved as part of the original styling, so check it against the journal's requirements separately.</p>
+<p>For a long thesis, do the check on the sections that changed and on one section that did not. The unchanged section is a control: if it changed shape, something went wrong with the file handling.</p>
+<h2>When to send the clean copy back through a project</h2>
+<p>If the supervisor's comments asked for an analysis change rather than a wording change, the clean copy is not the end of the job. Start Project handles revisions as new rounds with an explained scope and a preserved version history. Send the specific request — re-run the sensitivity analysis with the corrected coding, rebuild the forest plot with the new endpoint — rather than attaching the marked-up file and hoping the intent survives. The plan step exists to turn a comment into a checkable instruction.</p>
+<p>This is also where the data dictionary earns its place. A comment that says the exclusion rule changed is only actionable if the coded variable and its rule are written down. The public example is explicit about naming the analysis set and how missing outcomes are handled. Mirror that in your request and the returned version can be checked against the comment that prompted it, instead of against your memory of a conversation.</p>
+<h2>Step four: style, then submit</h2>
+<p>A submission system may require a specific citation style. That is a Citation Fix job, and it belongs after the wording pass so that it is done once. The conversion changes the arrangement of citations, not the wording or the sources. Spot-check one full reference and one in-text marker, then confirm the file opens cleanly in the word processor you will upload from.</p>
+<p>Keep the marked-up original, the clean copy and the decision record together. A journal that asks for a further change at proof stage is much easier to handle when you can see what was already accepted. Projects on HumanPen are kept for six months after the last activity with a reminder, and can be deleted at any time, but your own repository should hold the final files permanently.</p>
+<h2>Why not let a tool decide the changes</h2>
+<p>A rewrite tool sees text, not authority. It cannot know that the supervisor's deletion was tentative, that a comment was addressed in a later meeting, or that a changed number was a typo in the supervisor's read of the table. Those are decisions about evidence and people. The tool's value starts after you have made them, when the clean copy needs a careful pass that preserves everything you just decided.</p>
+<p>This is the honest boundary of the whole workflow. Document tools make a settled manuscript cleaner and correctly formatted. They do not settle the manuscript. If you still have open comments or unresolved disagreements with a supervisor, resolve them first; no amount of formatting will substitute.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can HumanPen accept tracked changes for me?</h3>
+<p>The document passes operate on the file you supply. Resolve insertions, deletions and comments in your word processor first, then submit the clean copy for a wording or formatting pass.</p>
+<h3>Will a wording pass change numbers my supervisor corrected?</h3>
+<p>No. Numbers, units, formulas, citations, terminology and claim strength are listed as protected and kept exactly as they were. Verify the corrected value against the analysis before the pass, though — the tool preserves what is in the file.</p>
+<h3>Are comments turned into body text?</h3>
+<p>A comment is markup, not prose. Resolve and remove comments before submitting the file for a pass, so that only body text is rewritten.</p>
+<h3>Does the returned file keep my tables and headings?</h3>
+<p>The home page states that bold, links and styles are kept, tables and numbering are in place, and original table layout is kept, with original styling untouched and no word limit.</p>
+<h3>What if the revision also changes the citation style?</h3>
+<p>Run Citation Fix after the wording pass and any structural cuts, so the style conversion is done once on the final text.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=tracked-changes-file-to-clean-submission">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=tracked-changes-file-to-clean-submission">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">Cost per task, using only HumanPen's published credit rules</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">Reproduce a published table from PDF to rerun you can audit with HumanPen</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

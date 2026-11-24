@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reproduce a published table from PDF to rerun you can audit with HumanPen</title>
+<meta name="description" content="A published table is a claim that somebody else&#x27;s numbers can be checked. Reproducing it is one of the most useful exercises in research, and one of the most tedious: find the sour">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/reproduce-a-published-table-with-humanpen.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reproduce a published table from PDF to rerun you can audit with HumanPen">
+<meta property="og:description" content="A published table is a claim that somebody else&#x27;s numbers can be checked. Reproducing it is one of the most useful exercises in research, and one of the most tedious: find the sour">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html#article", "headline": "Reproduce a published table from PDF to rerun you can audit with HumanPen", "description": "A published table is a claim that somebody else's numbers can be checked. Reproducing it is one of the most useful exercises in research, and one of the most tedious: find the sour", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/reproduce-a-published-table-with-humanpen.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Reproduce a published table from PDF to rerun you can audit with HumanPen</h1>
+<p>A published table is a claim that somebody else's numbers can be checked. Reproducing it is one of the most useful exercises in research, and one of the most tedious: find the source data, infer the analysis, match the formatting, then write down where yours differs. This page describes that as a pipeline and shows where HumanPen Start Project fits, using the product's own worked example as the model.</p>
+<p>The example is an IST secondary analysis. The public page states a full analysis set of nineteen thousand four hundred thirty-five patients, a primary endpoint of death or dependency at six months, and about one hundred fifty missing outcomes handled with a sensitivity analysis. It shows an aspirin group at sixty-two point two percent and a control group at sixty-three point five percent, with a P value of zero point zero seven two. That level of detail is what makes a reproduction checkable.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. Credit use depends on the work you confirm, so no total price is quoted here.</em></p>
+<h2>The reproduction pipeline</h2>
+<table><thead><tr><th>Stage</th><th>What you extract</th><th>What you must decide</th><th>Deliverable</th></tr></thead><tbody>
+<tr><td>Read the paper</td><td>Population, endpoint, timepoint</td><td>What exactly was compared</td><td>A one-sentence question</td></tr>
+<tr><td>Find the data</td><td>Source file, dictionary, coding</td><td>Which columns define the population</td><td>A prepared dataset</td></tr>
+<tr><td>Infer the analysis</td><td>Model, contrasts, missing-data rule</td><td>What was pre-specified</td><td>A written analysis plan</td></tr>
+<tr><td>Rerun</td><td>Same numbers from the prepared data</td><td>How close is close enough</td><td>Code and output</td></tr>
+<tr><td>Compare</td><td>Your table against the published one</td><td>Where and why they differ</td><td>A comparison note</td></tr>
+<tr><td>Format</td><td>Figures and tables to journal standard</td><td>Which convention applies</td><td>Editable figure and table files</td></tr>
+<tr><td>Verify</td><td>Reference list and citations</td><td>Are all sources found</td><td>Checked draft</td></tr>
+</tbody></table>
+<p>The pipeline is shaped by the product's own use case. Start Project lists "reproducing published results" as a use case: it reruns a paper's regressions and figures, with notes on differences. The review example adds what the check covers — a primary endpoint that matches, analysis populations that add up, a clean rerun that reproduces the results exactly, and every reference found one by one.</p>
+<h2>Stage one: write the question the paper answered</h2>
+<p>Before touching data, write one sentence naming the population, the endpoint and the timepoint. The public example does this: a full analysis set, death or dependency at six months, with missing outcomes handled separately. A reproduction that skips this step drifts into computing whatever the columns allow, and the resulting table can be correct in arithmetic and wrong as an answer.</p>
+<p>Capture the pre-specified contrasts and the missing-data rule in the same note. If the paper states that about one hundred fifty missing outcomes receive a sensitivity analysis, that is a decision to reproduce, not a rounding detail. In the example the primary comparison is reported with an odds ratio and a confidence interval and a P value, and the review states that the endpoint matches across groups. Those are the numbers your rerun must land on.</p>
+<h2>Stage two: prepare the data and the dictionary</h2>
+<p>HumanPen's research projects accept Excel, CSV, Word, PDF and zip files up to five gigabytes in total. Wind and CNKI data should be exported first. If the published study used a statistical package, note that analyses originally done in SPSS or Stata are performed using Python or R — so the reproduction will be a reimplementation in one of those languages, not a replay in the original package.</p>
+<p>Write a data dictionary as you go: which column is the endpoint, how missing values are coded, which variables define the analysis set. The dictionary is what makes the rerun auditable by someone else. It is also what lets you explain a difference later: if your number disagrees, the first place to look is a definition, not a random seed.</p>
+<p>Stage three: get a plan before the run</p>
+<p>Start Project is explicit about the order: describe the task and attach files, the system confirms requirements and proposes a plan, and work starts only after your approval. After a check by a second system, reports, charts and code are delivered. Read the plan against your one-sentence question. If the plan computes a different estimand, correct it before approval — changing it afterwards is a new round, not a correction.</p>
+<p>For an API-driven reproduction, the developer page describes the same shape. A project moves through states, and while it waits for input the required-input field says what to do next. Confirm the plan by naming the version you were shown. That version discipline matters in a reproduction, where a later reader needs to know which plan produced which table.</p>
+<h2>Stage four: rerun and write the difference note</h2>
+<p>A reproduction is not a pass/fail test. Small differences are expected when a rule is described in prose rather than code. The public example is unusually clear about this: a clean rerun reproduces the results exactly, and a separate comparison report with notes on differences is part of the deliverable. Aim to match, and write down every place you cannot.</p>
+<p>The note should say what you changed, why, and how much the result moved. If you had to choose a different coding for a missing category, state it. If you used Python where the paper used Stata, say so. A reader who can follow the difference is served better by an honest mismatch than by a suspiciously perfect match.</p>
+<p>Revisions follow the project path: request the change in the project, see the scope explained before work starts, confirm, and receive a new version while past versions are kept. Do not patch the code in a separate file and lose the link between plan and result.</p>
+<h2>Stage five: format for a reader, not a screen</h2>
+<p>A reproduction is easier to trust when it looks like the paper. HumanPen's research page describes journal-grade figures at three hundred dpi and three-line tables with captions to standard. The documented use cases also list R or Python code alongside a Word report, and a comparison report with figures and code for reproduced results.</p>
+<p>Keep the code with the document. A table without code is an assertion; a table with code is an invitation to check. The isolated sandbox described on the page encrypts data in transit, never shares a project across users or uses it for training, and allows deletion at any time. That is relevant when the source data is licensed or sensitive.</p>
+<h2>Stage six: verify the scholarship</h2>
+<p>Check the reference list the way the review example does: every reference found, one by one. Then confirm that the sentences around your table cite the sources that actually support them. HumanPen's document tools keep citations, numbers and claim strength unchanged during a wording pass, which is what you want when the table is the point of the document.</p>
+<p>Projects are kept for six months after the last activity, with a reminder three days before expiry, and can be deleted at any time. Export the report, code, figures and comparison note into your own repository after the reproduction is accepted.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can HumanPen replay an analysis in the original statistical package?</h3>
+<p>No. Analyses originally done in SPSS or Stata are performed using Python or R. A reproduction is a reimplementation in one of those languages, with code delivered.</p>
+<h3>What does the review example actually check?</h3>
+<p>It states that the primary endpoint matches, every analysis population adds up, a clean rerun reproduces the results, and all eleven references were found one by one.</p>
+<h3>Is a perfect match required?</h3>
+<p>No. The deliverable described for reproduced results is a comparison report, figures and code, with notes on differences. Documenting a difference is part of the job.</p>
+<h3>What file sizes and formats does a project accept?</h3>
+<p>Excel, CSV, Word, PDF and zip files up to five gigabytes in total. Export Wind or CNKI data first.</p>
+<h3>Does the tool promise a journal will accept the reproduction?</h3>
+<p>No. It describes a plan-first workflow, a second check, and specific deliverables. Editorial decisions are outside any tool.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=reproduce-a-published-table-with-humanpen">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=reproduce-a-published-table-with-humanpen">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">Cost per task, using only HumanPen's published credit rules</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/the-thesis-pipeline-cite-check-condense-translate-submit.html">The thesis pipeline</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

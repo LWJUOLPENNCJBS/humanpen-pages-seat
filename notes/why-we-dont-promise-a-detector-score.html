@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Why HumanPen does not promise a detector score, and what it promises instead</title>
+<meta name="description" content="A promise about a detector score is easy to write and impossible to keep. The detector is not part of the document, the report can change between checks, and no writing tool contro">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/why-we-dont-promise-a-detector-score.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why HumanPen does not promise a detector score, and what it promises instead">
+<meta property="og:description" content="A promise about a detector score is easy to write and impossible to keep. The detector is not part of the document, the report can change between checks, and no writing tool contro">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/why-we-dont-promise-a-detector-score.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/why-we-dont-promise-a-detector-score.html#article", "headline": "Why HumanPen does not promise a detector score, and what it promises instead", "description": "A promise about a detector score is easy to write and impossible to keep. The detector is not part of the document, the report can change between checks, and no writing tool contro", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/why-we-dont-promise-a-detector-score.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Why HumanPen does not promise a detector score, and what it promises instead</h1>
+<p>A promise about a detector score is easy to write and impossible to keep. The detector is not part of the document, the report can change between checks, and no writing tool controls what a plug-in will decide next week. This page explains what HumanPen states instead, why that wording is narrower, and how to read the difference when you are choosing between tools.</p>
+<p>The alternative to a score promise is a described workflow. HumanPen's public pages describe importing a Turnitin or iThenticate report to target flagged passages, keeping layout, citations and original meaning, protecting the scientific content, and re-checking with a new report if passages are still flagged. Each of those is a statement about what the tool does. None of them is a statement about what a detector will say.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. Credit use depends on the work you confirm, so no total price is quoted here.</em></p>
+<h2>Promise versus workflow, side by side</h2>
+<table><thead><tr><th>A score promise would say</th><th>What the public page actually says</th><th>Why the difference matters</th></tr></thead><tbody>
+<tr><td>A fixed result after one pass</td><td>Import a report to target flagged text</td><td>The result depends on what the report flags</td></tr>
+<tr><td>Pass guaranteed on the next check</td><td>If a re-check still shows a result at or above the threshold, import the new report</td><td>A second pass is a workflow step, not a guarantee</td></tr>
+<tr><td>All text reprocessed</td><td>Only flagged passages are rewritten; you are charged only for words actually rewritten</td><td>Untouched paragraphs and their layout stay as they were</td></tr>
+<tr><td>Any trick that works</td><td>No deliberate typos or grammar errors are introduced to fool detectors</td><td>The stated method is natural phrasing over protected content</td></tr>
+<tr><td>Numbers and citations may change as needed</td><td>Numbers, units, formulas, citations, terminology and claim strength are kept exactly</td><td>The scientific record is not rewritten</td></tr>
+<tr><td>One document type only</td><td>DOCX, PPTX and TXT, original styling untouched, no word limit</td><td>The promise is about file handling, not a detector</td></tr>
+<tr><td>Same result for every document</td><td>Re-check history is per file, with each round shown separately</td><td>There is no universal outcome to promise</td></tr>
+</tbody></table>
+<h2>A detector is an input, not an output</h2>
+<p>The first reason for the narrower wording is straightforward: the report is something you bring. HumanPen describes two ways to target text. You can select passages yourself, or import an existing Turnitin or iThenticate AI report to pinpoint exactly what needs polishing. The tool's job starts from the flagged set. If that set is different tomorrow, the job is different.</p>
+<p>That is why "we target what the report flags" is a claim the tool can make, and "you will get score X" is not. The first describes an operation on a file you supply. The second describes a decision made by a system the tool does not own. A careful comparison between products should separate these two kinds of claim, because they look similar in a feature list and are not similar in meaning.</p>
+<p>The same logic applies to the file type. The page shows a re-check history for a single document, with a first report, a later report and a final state. A history is a record of what happened to that file. It is not a distribution of outcomes from which a promise could be inferred.</p>
+<h2>What the re-check workflow really commits to</h2>
+<p>The home page states that if a re-check still shows a result at or above the stated threshold, you import the new report and the remaining flagged passages are rewritten for free. The example history shows a first rewrite that used credits, a second round marked free, and a final state below the threshold. The text under it says that only the paragraphs still flagged in that round are rewritten next, and that you can repeat as needed.</p>
+<p>Read carefully, the commitment is about scope and cost: only the remaining passages, at no extra credits. It is not a commitment that the third report will show what you want. A tool can honestly promise to keep working on the still-flagged parts without promising that any detector will ever stop flagging natural academic prose. That is the line this wording holds.</p>
+<p>For budgeting, the rule is equally specific. You are charged only for the words actually rewritten. A targeted pass on a short flagged set is therefore a smaller job than a full-document rewrite, and a free round is described as free in the re-check history rather than folded into an estimate.</p>
+<h2>What is protected while the wording changes</h2>
+<p>A second part of the honest answer is what the rewrite refuses to do. The protected-elements section states that numbers, units, formulas, citations, terminology and the strength of a claim are kept exactly as they were, and that only the phrasing is rebuilt naturally. It adds that deliberate typos and grammar errors are not introduced to fool detectors.</p>
+<p>That last clause is the clearest signal of intent on the page. A method based on inserting errors might move a number in the short term, but it corrupts the document and it makes the author's scientific claims harder to defend. The stated method is the opposite: keep the evidence fixed and rewrite the prose around it. If a reviewer asks what changed, the answer should be "the sentences", not "the data".</p>
+<p>The format claim belongs here too. DOCX, PPTX and TXT files come back with original styling untouched and no word limit. A score promise would have nothing to say about tables or headings. A workflow promise has to, because the document is the deliverable.</p>
+<h2>How to compare two tools without being misled</h2>
+<p>When you read a competitor's page, translate each claim into one of three buckets. The first bucket is operations the tool performs on a file you supply, such as accept a DOCX, import a report, preserve a table. The second bucket is conditions the tool sets, such as a word limit, a file size limit or a credit rate. The third bucket is outcomes the tool claims to control, such as a guaranteed score.</p>
+<p>Only the first two buckets are comparable across products. The third is where marketing language lives. HumanPen's pages stay in the first two: they describe accepted formats, a protected list, a targeting method, a re-check workflow and credit rules. They do not state a score you will receive. That is a deliberate choice, not an omission.</p>
+<p>Ask any vendor the same question: what exactly happens if the next report still flags the passage? A tool with a described workflow can answer with steps. A tool with a score promise has to repeat the promise, which tells you it has no answer.</p>
+<h2>Where the plan-first model fits</h2>
+<p>Document jobs are not the only path. Start Project describes a research-and-writing workflow in which you state the task, attach files, see a plan and start only after confirmation. Work is checked by a second system before delivery. Revisions are requested in the project, with the scope explained before work starts, and past versions are kept. Projects are kept for six months after the last activity.</p>
+<p>Those are all statements about process. Notice that none of them mention a score. The plan-first model exists to make the deliverable checkable: what did you ask for, what plan was confirmed, what came back, what changed in the next version. That is the same philosophy as the re-check history on the humanizer page. It replaces a promise about an outcome with a record of the work.</p>
+<h2>Frequently asked questions</h2>
+<h3>Does HumanPen state a target threshold anywhere?</h3>
+<p>The home page describes a re-check workflow in which passages still flagged at or above a stated threshold can be rewritten in a free round. It does not promise that any document will reach a particular score.</p>
+<h3>Do the rewrites use tricks such as deliberate misspellings?</h3>
+<p>No. The protected-elements section states that deliberate typos and grammar errors are not introduced to fool detectors. The described method is natural phrasing.</p>
+<h3>Will my numbers and citations change during a rewrite?</h3>
+<p>No. Numbers, units, formulas, citations, terminology and the strength of a claim are described as kept exactly as they were.</p>
+<h3>What is charged on a second pass?</h3>
+<p>The re-check workflow states that only the paragraphs still flagged in that round are rewritten, at no extra credits. The general rule is that you are charged only for the words actually rewritten.</p>
+<h3>Can I select passages myself instead of importing a report?</h3>
+<p>Yes. The page describes both routes: select passages yourself, or import an existing Turnitin or iThenticate AI report to target flagged text.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=why-we-dont-promise-a-detector-score">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=why-we-dont-promise-a-detector-score">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">Cost per task, using only HumanPen's published credit rules</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">Reproduce a published table from PDF to rerun you can audit with HumanPen</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

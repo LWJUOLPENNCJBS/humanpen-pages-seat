@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cost per task, using only HumanPen&#x27;s published credit rules</title>
+<meta name="description" content="A cost article that invents prices is worse than no cost article. This one uses only the rules stated on HumanPen&#x27;s own public pages and refuses to compute a total where the pages ">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/cost-per-task-walkthrough.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cost per task, using only HumanPen&#x27;s published credit rules">
+<meta property="og:description" content="A cost article that invents prices is worse than no cost article. This one uses only the rules stated on HumanPen&#x27;s own public pages and refuses to compute a total where the pages ">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html#article", "headline": "Cost per task, using only HumanPen's published credit rules", "description": "A cost article that invents prices is worse than no cost article. This one uses only the rules stated on HumanPen's own public pages and refuses to compute a total where the pages ", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/cost-per-task-walkthrough.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Cost per task, using only HumanPen's published credit rules</h1>
+<p>A cost article that invents prices is worse than no cost article. This one uses only the rules stated on HumanPen's own public pages and refuses to compute a total where the pages do not give one. What you get instead is a walkthrough of how credits are charged, which operations are free, which fields let you set a ceiling, and where to look for the actual rate before you commit.</p>
+<p>The rules, stated plainly: new accounts receive one hundred free credits; one thousand words of humanizing costs one hundred credits; you are charged only for the words actually rewritten; failed tasks are not charged; project scoping is charged too, usually a few dozen credits; and a plan carries no price up front. Credit use depends on the work, so this page quotes rules rather than totals.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. No total price is quoted here because the public pages do not state one for an arbitrary task.</em></p>
+<h2>The published rules, collected</h2>
+<table><thead><tr><th>Question</th><th>What the public page states</th><th>Where to check</th></tr></thead><tbody>
+<tr><td>Do new accounts get credits?</td><td>Register for one hundred free credits</td><td>HumanPen home page</td></tr>
+<tr><td>What does a humanize pass cost?</td><td>One thousand words costs one hundred credits</td><td>Humanize upload interface</td></tr>
+<tr><td>Am I charged for untouched text?</td><td>Charged only for words actually rewritten</td><td>HumanPen home page</td></tr>
+<tr><td>What if a job fails?</td><td>Failed tasks are not charged</td><td>Start Project FAQ</td></tr>
+<tr><td>Is scoping charged?</td><td>Scoping is charged too, usually a few dozen credits</td><td>Developer API page</td></tr>
+<tr><td>Does a plan state a price?</td><td>A plan carries no price up front</td><td>Developer API page</td></tr>
+<tr><td>Can I cap a round?</td><td>A round stops at the round limit or the budget you set</td><td>Developer API page</td></tr>
+<tr><td>Can I cap the whole project?</td><td>Autonomy never exceeds the maximum you set</td><td>Developer API page</td></tr>
+<tr><td>When is a figure final?</td><td>Once the settled flag is true</td><td>Developer API page</td></tr>
+<tr><td>Is there a word limit on documents?</td><td>No word limit for DOCX, PPTX and TXT</td><td>HumanPen home page</td></tr>
+</tbody></table>
+<p>Two rows deserve emphasis. First, the one-hundred-credits-per-thousand-words figure is the only per-unit rate stated on the pages read for this article; treat any other number you see elsewhere as unverified until you check it yourself. Second, "charged only for words actually rewritten" is more important to your bill than the rate, because a targeted pass on a flagged set is much smaller than a whole-document pass.</p>
+<h2>Walkthrough one: a flagged document</h2>
+<p>Suppose you have a chapter with a report flagging a subset of its paragraphs. You import the report rather than selecting the whole file. The tool targets flagged text, and the charge is for the words it actually rewrites — not for the full chapter length. The public example shows a first rewrite that used credits, a later round marked free, and a final state below the stated threshold.</p>
+<p>That is why "one thousand words costs one hundred credits" is a rate, not a bill. It applies to the volume rewritten. If the flagged set is a fraction of the chapter, the rewritten volume is a fraction too. The page states that if a later report still shows passages flagged at or above the threshold, you import the new report and the remaining passages are rewritten at no extra credits.</p>
+<p>The honest limit: the pages do not state what any particular document will cost, because the flagged volume is not known in advance. Check the upload interface, which shows the rate and the file's word count before you start.</p>
+<h2>Walkthrough two: a research project</h2>
+<p>A project has a different shape. You describe the task and attach files; the system scopes the request and proposes a plan; work starts after you confirm. Scoping is charged, and the developer page says it is usually a few dozen credits. The plan itself carries no price up front. Credits are charged by what the work uses, as it goes, and nothing is held.</p>
+<p>That last clause explains the budgeting fields. A round stops and asks you once it has used its round limit or the budget credits you set when confirming the plan. For a ceiling across the whole project, the autonomy setting has a maximum that the work never exceeds. Neither limit can be below the stated minimum. The public example shows a maximum expressed as a credit figure in an API request; read the current documentation for the field names and defaults.</p>
+<p>After a delivery, the settled flag is the point at which the figures are final. Until then, a number you see is an estimate of in-progress usage. That is a useful discipline for anyone reconciling a bill against a delivery.</p>
+<h2>The free-credit question</h2>
+<p>One hundred free credits is a starting balance, not a subscription. It is described as a registration offer with an exclusive first-order discount alongside it. Whether it covers a whole job depends entirely on the volume rewritten and the work done, which is why the page does not promise a page count.</p>
+<p>Spend it on a bounded first task where you can see the rate and the scope: a short flagged document, or a small project with a plan you understand. That turns the first balance into a controlled test of the workflow rather than a partial run you cannot evaluate.</p>
+<h2>What is explicitly not charged</h2>
+<p>Failed tasks are not charged. Rewrites of passages still flagged in a later report, under the documented re-check workflow, are free. Nothing is held against your balance before work starts. These three rules matter more than any rate, because they define what you risk when you try a job.</p>
+<p>What is charged: scoping, the words actually rewritten, and the usage of a confirmed project round. The responsible way to plan is to set a ceiling you can afford, confirm a plan you understand, and read the settled figure before treating a cost as final.</p>
+<h2>Reading the settled figures</h2>
+<p>A delivery settles within a minute or two, and the developer page says that once the settled flag is true the figures are final. That detail is easy to overlook when a job completes quickly and the display shows a number immediately. Treat the earlier number as an estimate and the settled one as the record. If you are reconciling usage against a budget, use the settled figure and keep the request identifier — the API response includes one for correlating support requests.</p>
+<p>The same discipline applies to a document job. Keep the input, the returned file and the rate you saw in the upload interface. A short record of what was flagged and what changed turns a charge into an understandable event rather than a line item you have to guess at later.</p>
+<h2>Why there is no arithmetic table here</h2>
+<p>A cost table with invented task sizes would look authoritative and be worthless. The pages read for this article do not state the flagged fraction of your document, the exact scoping charge for your task, or the usage of a project before it runs. Writing those numbers down would be fabrication, and the whole point of this page is to avoid that.</p>
+<p>If you need a real estimate, do three things. Read the rate in the upload interface for the document job. Confirm a plan for the project and set the ceiling fields. Then run a small first job on the free balance and read the actual charge. That is a measurement, not a promise, and it is the only kind of cost figure worth repeating.</p>
+<h2>Frequently asked questions</h2>
+<h3>What is the only per-unit rate on the public pages?</h3>
+<p>One thousand words of humanizing costs one hundred credits. The pages read for this article state no other per-unit rate, so treat other figures as unverified.</p>
+<h3>Am I charged for the whole document or only the changes?</h3>
+<p>Only for words actually rewritten. Selecting passages or importing a report keeps a targeted job small.</p>
+<h3>Does confirming a project plan lock a price?</h3>
+<p>No. A plan carries no price up front; credits are charged by usage as the work runs, and the figures become final once the settled flag is true.</p>
+<h3>How do I stop a project from spending too much?</h3>
+<p>Set a round limit or budget credits when confirming the plan, and a maximum for the whole project under autonomy. Neither can be below the stated minimum.</p>
+<h3>What if a task fails?</h3>
+<p>Failed tasks are not charged. That rule is stated in the Start Project FAQ.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=cost-per-task-walkthrough">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=cost-per-task-walkthrough">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">Reproduce a published table from PDF to rerun you can audit with HumanPen</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/the-thesis-pipeline-cite-check-condense-translate-submit.html">The thesis pipeline</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

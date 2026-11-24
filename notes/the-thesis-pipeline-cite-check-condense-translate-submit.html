@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The thesis pipeline: cite-check, condense, translate, then submit with HumanPen</title>
+<meta name="description" content="A thesis is not one task. It is a chain of passes over the same document, and the order matters. Check references too late and you reformat sources that do not exist. Condense too ">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/the-thesis-pipeline-cite-check-condense-translate-submit.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The thesis pipeline: cite-check, condense, translate, then submit with HumanPen">
+<meta property="og:description" content="A thesis is not one task. It is a chain of passes over the same document, and the order matters. Check references too late and you reformat sources that do not exist. Condense too ">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/the-thesis-pipeline-cite-check-condense-translate-submit.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/the-thesis-pipeline-cite-check-condense-translate-submit.html#article", "headline": "The thesis pipeline: cite-check, condense, translate, then submit with HumanPen", "description": "A thesis is not one task. It is a chain of passes over the same document, and the order matters. Check references too late and you reformat sources that do not exist. Condense too ", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/the-thesis-pipeline-cite-check-condense-translate-submit.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>The thesis pipeline: cite-check, condense, translate, then submit with HumanPen</h1>
+<p>A thesis is not one task. It is a chain of passes over the same document, and the order matters. Check references too late and you reformat sources that do not exist. Condense too early and you cut the evidence you needed for the results section. Translate before you fix the structure and you translate a draft you will throw away. This page describes a pipeline with a deliberate order, and shows where each HumanPen document tool fits.</p>
+<p>The pipeline uses tools that exist as separate surfaces on the same product: Citation Fix, Condense, Translate and Humanize, plus Start Project when the work involves data or original drafting. They share a document and a credit balance, which is the practical reason to keep the passes in one place. The rule throughout is that content is protected while form changes: numbers, units, formulas, citations, terminology and claim strength stay as they were.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. Credit use depends on the work you confirm, so no total price is quoted here.</em></p>
+<h2>The pipeline at a glance</h2>
+<table><thead><tr><th>Stage</th><th>Input</th><th>Tool surface</th><th>What must survive</th><th>Gate before next stage</th></tr></thead><tbody>
+<tr><td>Reference check</td><td>Draft with markers and list</td><td>Read sources / project review</td><td>Each source real and matched</td><td>No missing or invented reference</td></tr>
+<tr><td>Citation style</td><td>Checked draft</td><td>Citation Fix</td><td>Wording, numbers, claim strength</td><td>One known reference spot-checked</td></tr>
+<tr><td>Condense</td><td>Over-length chapter</td><td>Condense</td><td>Citations and key figures</td><td>Word budget met, evidence intact</td></tr>
+<tr><td>Language pass</td><td>Chapter in source language</td><td>Translate</td><td>Maths, terms, formatting</td><td>One equation and one table verified</td></tr>
+<tr><td>Wording pass</td><td>Submitted-language draft</td><td>Humanize with report</td><td>Protected elements, layout</td><td>Flagged passages reviewed</td></tr>
+<tr><td>Data or drafting</td><td>Task plus files</td><td>Start Project</td><td>Confirmed plan, code, versions</td><td>Plan confirmed before work starts</td></tr>
+</tbody></table>
+<p>The sequence is not doctrine. A chapter that needs no shortening skips the condense stage. A thesis written in the submission language skips translation. What matters is that reference verification precedes formatting, and that any structural cutting precedes the final language and wording passes.</p>
+<h2>Stage one: verify before you format</h2>
+<p>Start with the sources. Confirm that every in-text marker has a matching entry, that every entry is reachable, and that each source supports the sentence citing it. HumanPen's Start Project review example states that all eleven references were found, one by one; that is a presence check from a delivered project, not a library service. The document-level tools keep citations untouched, which means a broken citation stays broken until you fix it.</p>
+<p>The reason to put this first is cost in the broad sense. Reformatting a fabricated reference wastes a pass, and discovering the fabrication after translation means translating a sentence you will delete. One session with the source list is cheaper than repeating four downstream stages.</p>
+<p>If your sources live in a reference manager, keep it. HumanPen does not maintain a library; it preserves the citations in your document. The division of labour is clean: the library owns metadata, the document tool owns the pass over wording and form.</p>
+<h2>Stage two: convert the style, not the argument</h2>
+<p>Citation Fix is the mechanical stage. A style conversion changes the arrangement of author, year, title and source to match the target convention, and updates in-text markers accordingly. It does not change your sentences, results or the force of a claim. The protected-elements principle applies: citations, numbers, units, formulas, terminology and claim strength are kept.</p>
+<p>A journal that changes its style at revision sends you back to this stage alone. That is the cheapest possible revision, because stages one, three and four do not need repeating. Spot-check one reference you know well before and after, then move on.</p>
+<h2>Stage three: condense to a budget, not to a summary</h2>
+<p>A thesis chapter over its limit is a budget problem. Condense is listed among the document tools for exactly this kind of pass. The important discipline is to set the budget before the pass and to protect the evidence: the figures, the tables and the citations that carry the argument.</p>
+<p>Condensing a literature review is different from summarizing it. A summary produces a new text that stands alone; a condense pass shortens the existing text while keeping the structure and the sources. That distinction is why it belongs before translation and after verification. If you cut a citation here, there is nothing downstream to restore it.</p>
+<p>Check the result by reading the topic sentences and the numbers, not every word. If the argument still reads in sequence and the key figures are present, the pass did its job.</p>
+<h2>Stage four: translate the settled structure</h2>
+<p>Translate belongs after the content has stopped moving. The tool is listed as a document surface, and the document-level promises apply to it as to the others: formatting is kept, and the file returns editable. For a thesis with equations and tables, verify one of each after the pass. An equation that renders correctly in the source language can still lose a subscript in translation if you do not look.</p>
+<p>Keep terminology stable across chapters. The protected list names terminology as an element that should be kept, and that is especially useful when the same construct appears in methods, results and discussion. If you have a glossary, hold the translated terms against it.</p>
+<h2>Stage five: the final wording pass</h2>
+<p>Humanize is the last language stage, after structure and content are fixed. Its documented method is to target flagged passages, either selected by you or imported from a Turnitin or iThenticate report, and to rebuild the phrasing while keeping numbers, units, formulas, citations, terminology and claim strength. The file comes back as a DOCX, PPTX or TXT with original styling untouched and no word limit.</p>
+<p>Putting this pass last matters for cost and for logic. You are charged only for the words actually rewritten, so a targeted pass on a settled chapter is smaller than a pass on a draft you will still cut. And a rewrite cannot protect a claim you have not yet finalized. If a re-check still shows passages flagged at or above the stated threshold, you import the new report and the remaining passages are rewritten for free. That is a workflow, not a score promise.</p>
+<h2>Where Start Project enters the pipeline</h2>
+<p>The document tools operate on files you supply. When the work is not yet a file — an analysis to run, a literature set to read, a first draft to produce from data — Start Project is the entry point. The public workflow is explicit: describe the task and attach files, see a plan, and start only after confirmation. A second check runs before delivery. Revisions are requested in the project, with the scope explained first, a new version delivered and past versions kept.</p>
+<p>That model is useful at the front of the pipeline, not the end. Use it to produce the evidence table, the analysis and the first draft. Then export the deliverable and run the document passes above. Mixing the two — editing a project delivery by hand in a separate file — loses the version record that makes the revision path valuable.</p>
+<p>Projects are kept for six months after the last activity, with a reminder beforehand, and can be deleted at any time. Export what you need into your own repository once the pipeline is done.</p>
+<h2>Frequently asked questions</h2>
+<h3>Do all four document tools share one credit balance?</h3>
+<p>The Start Project pages and developer documentation describe a single balance across the paths, and the developer page states that the agent, skill and API paths spend the same balance. Credit use for each document job depends on the work done.</p>
+<h3>Should I condense before or after translating?</h3>
+<p>Before. Cutting a settled draft means translating less text, and removing a citation before translation avoids translating a sentence you will delete.</p>
+<h3>Does the wording pass change my numbers or citations?</h3>
+<p>No. Numbers, units, formulas, citations, terminology and claim strength are described as kept exactly as they were; only the phrasing is rebuilt.</p>
+<h3>Can I skip the reference check if the journal only changed its style?</h3>
+<p>Yes. A style change at revision is a Citation Fix job. The reference check belongs at the first submission, and repeating it is only necessary if the source set changed.</p>
+<h3>What file types come back from the document passes?</h3>
+<p>DOCX, PPTX and TXT files return editable, with original styling untouched. Research-project uploads accept Excel, CSV, Word, PDF and zip files up to five gigabytes in total.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=the-thesis-pipeline-cite-check-condense-translate-submit">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=the-thesis-pipeline-cite-check-condense-translate-submit">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">Cost per task, using only HumanPen's published credit rules</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">Reproduce a published table from PDF to rerun you can audit with HumanPen</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

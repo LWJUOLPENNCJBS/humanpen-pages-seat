@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>What &quot;formatting preserved&quot; actually means in HumanPen, and what it does not</title>
+<meta name="description" content="&quot;Formatting preserved&quot; is one of those phrases that sounds absolute and never is. Every document tool means something slightly different by it. This page states exactly what HumanP">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/what-formatting-preserved-actually-means.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What &quot;formatting preserved&quot; actually means in HumanPen, and what it does not">
+<meta property="og:description" content="&quot;Formatting preserved&quot; is one of those phrases that sounds absolute and never is. Every document tool means something slightly different by it. This page states exactly what HumanP">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/what-formatting-preserved-actually-means.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/what-formatting-preserved-actually-means.html#article", "headline": "What \"formatting preserved\" actually means in HumanPen, and what it does not", "description": "\"Formatting preserved\" is one of those phrases that sounds absolute and never is. Every document tool means something slightly different by it. This page states exactly what HumanP", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/what-formatting-preserved-actually-means.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>What "formatting preserved" actually means in HumanPen, and what it does not</h1>
+<p>"Formatting preserved" is one of those phrases that sounds absolute and never is. Every document tool means something slightly different by it. This page states exactly what HumanPen's public pages claim, where the claim stops, and what you should check on the file that comes back. The aim is not to sell the phrase but to make it testable.</p>
+<p>The claim itself is modest when read literally. HumanPen says a DOCX, PPTX or TXT file comes back with its original styling untouched however long the document. It also names a set of protected elements that are kept exactly as they were: numbers, units, formulas, citations, terminology and the strength of a claim. Only the phrasing is rebuilt. Those two statements together describe a document-level rewrite, not a re-creation of your layout from scratch.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. Credit use depends on the work you confirm, so no total price is quoted here.</em></p>
+<h2>The claim, element by element</h2>
+<table><thead><tr><th>Element</th><th>What the public page says</th><th>What you should still check</th></tr></thead><tbody>
+<tr><td>Overall file type</td><td>DOCX, PPTX and TXT are accepted and the file returns as an editable document</td><td>Open it in your own word processor, not a preview pane</td></tr>
+<tr><td>Styling</td><td>Original styling untouched, however long the document</td><td>Compare a styled heading and a body paragraph with the original</td></tr>
+<tr><td>Bold, links and styles</td><td>Kept</td><td>Search for a link target and confirm it still resolves</td></tr>
+<tr><td>Tables and numbering</td><td>In place; original table layout kept</td><td>Look at a multi-page table and its caption</td></tr>
+<tr><td>Numbers and units</td><td>Kept exactly as they were</td><td>Diff every numeric cell against your source table</td></tr>
+<tr><td>Formulas and maths</td><td>Inline and display maths intact</td><td>Open one equation, not just its rendered line</td></tr>
+<tr><td>Citations</td><td>Untouched</td><td>Check one in-text citation and its reference-list entry</td></tr>
+<tr><td>Terminology</td><td>Protected</td><td>Compare your defined terms against a glossary</td></tr>
+<tr><td>Strength of a claim</td><td>Kept as it was</td><td>Read the verbs: "associated with" must not become "caused"</td></tr>
+</tbody></table>
+<p>The table is deliberately split into two kinds of row. The first group is what the page states. The second is what a careful author verifies anyway, because a formatting claim is a statement about the tool's behaviour, not about the correctness of your manuscript.</p>
+<h2>What "untouched styling" does mean</h2>
+<p>Styling here refers to the visible structure of a document that a word processor manages: paragraph styles, bold and italic runs, link formatting, numbering, table layout and captions. The home page shows a before-and-after example in which a heading, a group statistics table with a control row, and the surrounding numbering remain in place while the sentence above the table changes. The text underneath the example names what survived: bold, links and styles kept; tables and numbering in place; original table layout kept.</p>
+<p>For a thesis or a journal submission, this is the part that saves the most rework. A rewrite that returns plain text forces you to rebuild every heading level, reapply every caption style and re-check every cross-reference. A rewrite that returns the same document with changed sentences lets you read the result as a document. That is the practical content of the claim.</p>
+<p>Length is part of it too. The page states there is no word limit for these document jobs and that the styling is kept however long the document. In practice, that means the check you perform should be done on the pages you care about most, not only on the first page. A long chapter is where numbering and cross-references tend to drift, if they drift at all.</p>
+<h2>What it does not mean</h2>
+<p>It does not mean the tool re-types your equations. Formula and maths are listed as protected and intact, which is a promise not to alter them, not a promise to re-render them more beautifully. If an equation is already ugly in the original, it will still be ugly in the return. The same applies to a table whose design was a poor choice in the first place. Preserving a layout preserves your decisions, good and bad.</p>
+<p>It does not mean the tool edits a reference library. Citations are kept, and a supplied report can be checked for references found one by one, but there is no metadata store behind the document. It does not mean the tool fixes a broken citation that was already broken. Protected means unchanged, not repaired.</p>
+<p>It does not mean a new document is created in a different template. There is no "convert to journal style" promise in the phrase. If the target venue has its own file template, moving the content into that template is still your job, and doing it before the rewrite is usually easier than doing it after.</p>
+<p>Finally, it does not mean a detector score. The pages describe a targeted rewrite and a re-check workflow. They do not state that any particular score will follow, and the protected-elements section explicitly says the tool does not introduce deliberate typos or grammar errors to mislead a detector.</p>
+<h2>The protected list is the real specification</h2>
+<p>Of all the wording on the page, the protected-elements list is the most useful to an author. Numbers, units, formulas, citations, terminology and the strength of a claim are kept exactly as they were. Only the phrasing is rebuilt naturally. That list tells you what kind of pass to expect: a linguistic pass over sentences, with the scientific content held fixed.</p>
+<p>It also tells you where to aim your verification. A reviewer's worst discovery is not an awkward sentence; it is a changed result. If the tool keeps the number, unit, formula, citation, term and claim strength, then a numeric diff and a citation spot-check cover the high-risk surface. The prose still needs reading, because a natural rewrite can be wrong about emphasis even when every number is right.</p>
+<p>This is why the phrase "document-level" matters. A text-box humanizer sees a string. A document-level tool sees a file with tables, headings, references and equations, and the protected list is the statement of what it will not touch in that file.</p>
+<h2>Targeting changes the arithmetic, not the layout</h2>
+<p>HumanPen can rewrite passages you select yourself or passages flagged by an imported Turnitin or iThenticate report. The page states that you are charged only for the words actually rewritten. That is a costing rule, but it has a formatting consequence too: untouched paragraphs stay untouched, including their layout. A targeted pass is therefore smaller than a whole-document pass on both dimensions.</p>
+<p>The documented re-check workflow follows the same logic. If a later report still shows a result at or above the stated threshold, you import the new report and only the remaining flagged passages are rewritten for free. The point for this page is not the score; it is that the second pass is also targeted. It does not reprocess the whole file, which is why the same tables, headings and citations are still there afterwards.</p>
+<h2>A verification pass you can actually run</h2>
+<p>Open the original and the return side by side. First compare the document map or navigation pane: heading levels, section order and page count. Second, pick one table and read every cell against the original. Third, open one equation and one citation. Fourth, search for a link and confirm the target is intact. Fifth, read the paragraphs that changed and ask whether the claim still has the same force. That is five checks and it takes minutes, not hours.</p>
+<p>If any of those differ in a way you did not ask for, say so in the project revision request rather than patching the file by hand. Revisions are handled in the project: the scope is explained first, work starts after confirmation, a new version is delivered and past versions are kept. Keeping the fix in the same thread preserves the audit trail.</p>
+<h2>Frequently asked questions</h2>
+<h3>Does "original styling untouched" apply to long documents?</h3>
+<p>The home page says DOCX, PPTX and TXT have no word limit and that the file comes back with original styling untouched however long the document. Verify across the whole file, not just the opening pages.</p>
+<h3>Are equations rewritten?</h3>
+<p>No. Inline and display maths are described as intact, and formulas are on the protected list. The tool does not improve or redesign an equation.</p>
+<h3>Will my citations be renumbered?</h3>
+<p>The pages say citations are untouched. If the original numbering was inconsistent, that inconsistency remains; the tool is not a citation manager.</p>
+<h3>What about deliberate typos to lower a detector result?</h3>
+<p>The page explicitly says no deliberate typos or grammar errors are introduced to fool detectors. The rewrite is described as natural phrasing over protected content.</p>
+<h3>Is a preserved table layout the same as a journal-ready table?</h3>
+<p>No. HumanPen's research projects deliver three-line tables and captions to standard, but a preserved layout simply means your original layout is still there. Check the venue's own requirements separately.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=what-formatting-preserved-actually-means">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=what-formatting-preserved-actually-means">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">Cost per task, using only HumanPen's published credit rules</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">Reproduce a published table from PDF to rerun you can audit with HumanPen</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

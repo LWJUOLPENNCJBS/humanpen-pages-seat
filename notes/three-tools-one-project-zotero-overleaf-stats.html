@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three tools and one project: Zotero, Overleaf and a statistics stack versus HumanPen</title>
+<meta name="description" content="Most research workflows are a stack, not a product. A reference manager holds the sources, a LaTeX editor holds the manuscript, and a statistical package holds the analysis. Every ">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-blog/articles/three-tools-one-project-zotero-overleaf-stats.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Three tools and one project: Zotero, Overleaf and a statistics stack versus HumanPen">
+<meta property="og:description" content="Most research workflows are a stack, not a product. A reference manager holds the sources, a LaTeX editor holds the manuscript, and a statistical package holds the analysis. Every ">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/three-tools-one-project-zotero-overleaf-stats.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/three-tools-one-project-zotero-overleaf-stats.html#article", "headline": "Three tools and one project: Zotero, Overleaf and a statistics stack versus HumanPen", "description": "Most research workflows are a stack, not a product. A reference manager holds the sources, a LaTeX editor holds the manuscript, and a statistical package holds the analysis. Every ", "datePublished": "2026-11-25", "dateModified": "2026-11-25", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-blog/articles/three-tools-one-project-zotero-overleaf-stats.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/honest-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Three tools and one project: Zotero, Overleaf and a statistics stack versus HumanPen</h1>
+<p>Most research workflows are a stack, not a product. A reference manager holds the sources, a LaTeX editor holds the manuscript, and a statistical package holds the analysis. Every handoff between them is a place where a number or a citation can drift. This page compares that arrangement with a single plan-first project, without pretending one replaces the other — the honest answer is about which handoffs you can afford.</p>
+<p>HumanPen Start Project is described as research, data analysis and professional writing delivered end to end: you say what you need, attach data, and get analysis, charts and a report. It is not a reference manager or a LaTeX editor. The comparison is therefore about workflow shape. The tool's own boundary statements matter: analyses originally done in SPSS or Stata are performed using Python or R, Wind or CNKI data should be exported first, and GPU training is not supported.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen as its public pages read on 25 November 2026. No synthetic benchmark was run. Credit use depends on the work you confirm, so no total price is quoted here.</em></p>
+<h2>The stacks compared</h2>
+<table><thead><tr><th>Stage</th><th>Zotero + Overleaf + statistics</th><th>HumanPen Start Project</th><th>Where each wins</th></tr></thead><tbody>
+<tr><td>Collect sources</td><td>Shared library, browser capture</td><td>Read your papers; search PubMed in the project</td><td>Library for ongoing work; project for a bounded task</td></tr>
+<tr><td>Manage citations</td><td>Live bibliography, de-duplication</td><td>Keeps citations unchanged; checks references found</td><td>Library owns metadata</td></tr>
+<tr><td>Write</td><td>LaTeX, version-controlled source</td><td>DOCX report and draft; editable PPTX</td><td>LaTeX for equations-heavy work; DOCX for journal submission</td></tr>
+<tr><td>Analyse</td><td>Native package of your choice</td><td>Python or R, code delivered</td><td>Native replay if required; code-first rerun otherwise</td></tr>
+<tr><td>Figures</td><td>Generated in the analysis tool</td><td>Journal-grade figures to three hundred dpi</td><td>Both, depending on convention</td></tr>
+<tr><td>Assemble</td><td>Manual export and paste</td><td>Analysis, charts and report together</td><td>One workspace for a bounded deliverable</td></tr>
+<tr><td>Revise</td><td>Git or manual versions</td><td>New version delivered, past versions kept</td><td>Both, with different discipline</td></tr>
+<tr><td>Retain</td><td>Your repository</td><td>Six months after last activity</td><td>Your repository is permanent</td></tr>
+</tbody></table>
+<p>The table is deliberately two-sided. A stack is better at continuous, collaborative, long-lived work. A single project is better at a bounded task where the analysis, figures and report must agree with each other at the moment of delivery. Choosing between them is a question about the shape of the work, not about which tool is more capable.</p>
+<h2>The real cost of the stack is the handoff</h2>
+<p>A reference manager, an editor and a statistics package are each good at their own stage. The cost appears at the boundaries. A number is copied from an output window into a manuscript. A bibliography is exported and then edited by hand for a journal style. A figure is regenerated after a data correction and the old one is still in the submission. None of these are tool failures; they are translation failures between tools.</p>
+<p>HumanPen's starting point addresses one of them. The page describes a data report, clinical-trial statistics, a research paper and group-meeting slides as example outputs of the same project. The review example states that a primary endpoint matches, populations add up, a rerun reproduces the results, and references were found one by one. That is a check across stages, which is exactly what a stack has to do manually.</p>
+<p>But the stack has an advantage a single project does not: each component can be replaced. If you need native SPSS replay, keep SPSS. If your field requires a specific LaTeX class, keep Overleaf. The tool does not claim to be a library or an editor, and that is a reasonable boundary rather than a weakness.</p>
+<h2>Where the plan-first model earns its place</h2>
+<p>The strongest case for a single project is a task with a clear deliverable and a deadline: a re-analysis of a published table, a clinical statistics report, a first draft from a dataset, a set of slides for a defence. The public workflow is explicit. You describe the task and attach files, the system confirms requirements and proposes a plan, work starts only after your approval, and a second check runs before reports, charts and code are delivered.</p>
+<p>That sequence replaces a chain of informal handoffs with one written agreement. If the plan names the endpoint and the population, you can hold the delivery against it. If a revision is needed, the scope is explained before work starts, a new version is delivered and past versions are kept. A stack can do this, but only if the team enforces the discipline; here the discipline is the product.</p>
+<p>For API users the same shape is available. The developer page describes a project with a state and a stage, a required-input field while it waits for you, a plan you confirm by naming its version, and a delivery downloaded from a short-lived signed URL. Autonomy can run a project within a credit cap, and a webhook names only the project and its state. That is a fit for automated pipelines, not a reason to abandon a reference library.</p>
+<h2>What to put in the plan so the handoffs stay small</h2>
+<p>The quality of the project delivery is bounded by the quality of the first message. Name the population, the endpoint, the output format and the target convention in the request itself, the way you would brief a colleague. If you want three-line tables and captions, say so. If the report must be a Word file with the code alongside, say so. The public FAQ states that AI confirms requirements and proposes a plan before work starts, so the first message is where those decisions get fixed.</p>
+<p>Attach the data dictionary with the files. A coded variable without its codebook is the classic handoff failure in a stack, and it is no less a failure inside a single project. The example project names its analysis set and explains how missing outcomes are handled; that level of specification is what you should aim for in the request. The plan you approve then becomes the acceptance criterion against which the delivered report, charts and code are checked.</p>
+<h2>The honest limits before you commit</h2>
+<p>Three limits are stated plainly and should shape the decision. First, analysis runs on Python or R; work originally done in SPSS or Stata is re-performed, not replayed. If your reproducibility requirement names the original package, a single project cannot satisfy it alone. Second, Wind and CNKI exports must be prepared first. Third, GPU training is not supported — this is a document and research-data service, not a training environment.</p>
+<p>Retention is a fourth consideration. Projects are kept for six months after the last activity, with a reminder three days before expiry, and can be deleted at any time. A stack that writes into your own version-controlled repository is permanent by default. For a long-running thesis, the repository remains the system of record and the project is a workspace you export from.</p>
+<p>None of this argues against the project. It argues for using it for what it is: a bounded, checkable workspace for analysis and writing, with an explicit plan and a version history.</p>
+<h2>A practical division of labour</h2>
+<p>Keep Zotero or your equivalent as the library. Keep Overleaf if your target venue expects LaTeX or your equations demand it. Use the statistical package when native replay is required. Then identify the bounded deliverables in the project plan — the re-analysis, the evidence table, the draft, the slides — and run those as projects. Export the results into your own repository and your own editor for final assembly.</p>
+<p>This division keeps each tool doing what it is good at and reduces the handoffs that matter most. The-output check is simple: after delivery, verify that the endpoint in the report matches the plan, that the populations add up, that the rerun reproduces the result, and that the references are all found. If those four hold, the analysis-to-report handoff survived.</p>
+<h2>Frequently asked questions</h2>
+<h3>Does Start Project replace Zotero?</h3>
+<p>No. It keeps citations unchanged in a document and can check references found in a delivered project, but it does not maintain a shared reference library with metadata and de-duplication.</p>
+<h3>Can it write LaTeX directly?</h3>
+<p>The described deliverables are Word reports, editable PowerPoint slides, code, figures and comparison documents. If your venue requires a LaTeX source, keep an editor for final assembly.</p>
+<h3>What languages does the analysis run in?</h3>
+<p>Python or R. Analyses originally done in SPSS or Stata are performed using Python or R, and code is delivered.</p>
+<h3>What happens to my project after delivery?</h3>
+<p>It is kept for six months after the last activity, with a reminder three days before expiry, and can be deleted at any time. Export what you need to keep permanently.</p>
+<h3>Can I automate the whole flow through the API?</h3>
+<p>Yes, within stated limits. A project can confirm plans and answer questions under a credit cap, with a webhook naming only the project and state. API keys belong in backend services, not browsers or public repositories.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project — https://humanpen.net/projects (accessed 2026-11-25)</li><li>HumanPen home page — https://humanpen.net/ (accessed 2026-11-25)</li><li>HumanPen Developer API — https://humanpen.net/developers (accessed 2026-11-25)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=three-tools-one-project-zotero-overleaf-stats">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=three-tools-one-project-zotero-overleaf-stats">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/citation-fix-is-not-reference-verification.html">HumanPen Citation Fix is not reference verification</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/cost-per-task-walkthrough.html">Cost per task, using only HumanPen's published credit rules</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-changes-citation-style-at-revision.html">When the journal changes citation style at revision</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/reproduce-a-published-table-with-humanpen.html">Reproduce a published table from PDF to rerun you can audit with HumanPen</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>
