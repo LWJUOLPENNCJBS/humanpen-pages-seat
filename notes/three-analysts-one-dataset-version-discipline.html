@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Three analysts, one dataset: version discipline that holds up on HumanPen Start Project</title>
+<meta name="description" content="When one person analyses a dataset, version control is a preference. When three people do, it is the only thing standing between a defensible result and a table whose provenance no">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/three-analysts-one-dataset-version-discipline.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Three analysts, one dataset: version discipline that holds up on HumanPen Start Project">
+<meta property="og:description" content="When one person analyses a dataset, version control is a preference. When three people do, it is the only thing standing between a defensible result and a table whose provenance no">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/three-analysts-one-dataset-version-discipline.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/three-analysts-one-dataset-version-discipline.html#article", "headline": "Three analysts, one dataset: version discipline that holds up on HumanPen Start Project", "description": "When one person analyses a dataset, version control is a preference. When three people do, it is the only thing standing between a defensible result and a table whose provenance no", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/three-analysts-one-dataset-version-discipline.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/audience-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Three analysts, one dataset: version discipline that holds up on HumanPen Start Project</h1>
+<p>When one person analyses a dataset, version control is a preference. When three people do, it is the only thing standing between a defensible result and a table whose provenance nobody can reconstruct. The symptoms are familiar: two files with the same name, three different Ns, and a figure that cannot be regenerated.</p>
+<p>This is the discipline we would impose on a shared project, whether the analysis is run by a team, by a student and a supervisor, or by one analyst plus HumanPen Start Project.</p>
+<p><em>Editorial disclosure: published by HumanPen. Product statements describe HumanPen Start Project as its public pages read on 24 November 2026. No synthetic benchmark was run.</em></p>
+<h2>The version events that must be recorded</h2>
+<table><thead><tr><th>Event</th><th>What must change in the record</th><th>What must not change silently</th></tr></thead><tbody>
+<tr><td>New raw data arrive</td><td>A new raw file name, dated, with what was added</td><td>The canonical analysis file, until the merge is verified</td></tr>
+<tr><td>A correction is applied</td><td>A dated note with the reason and the affected rows</td><td>The old file, which must remain retrievable</td></tr>
+<tr><td>A variable is recoded</td><td>A codebook entry with the old and new coding</td><td>The definition of any outcome already reported</td></tr>
+<tr><td>The population changes</td><td>A new named population, with inclusion rules stated</td><td>The denominators in tables already circulated</td></tr>
+<tr><td>A model is re-specified</td><td>A note naming the previous specification and why it changed</td><td>The results already quoted in a draft</td></tr>
+<tr><td>A table is regenerated</td><td>A diff of the numbers that moved</td><td>Any number without an explanation</td></tr>
+<tr><td>A deliverable is superseded</td><td>The version number and the date of supersession</td><td>The previous version, which reviewers may ask about</td></tr>
+</tbody></table>
+<h2>One file is canonical, and it says so in its name</h2>
+<p>Adopt a naming rule and never break it: a canonical file carries a date, a short reason, and no words like "final". "Final" is a lie within a week. The canonical file is the only file any analysis may read, and every derivative is produced by a script rather than by hand.</p>
+<p>Then write one sentence in the project brief: this file, this version, this date. When someone asks which numbers are current, the answer is a file name rather than a recollection.</p>
+<h2>Publish the denominators before the models</h2>
+<p>Before anyone fits a model, agree on the population definitions and print the counts. Every table in every deliverable must then reconcile with those counts, and any table that does not is a defect rather than a variation.</p>
+<p>This is the earliest possible check and it is the one that catches the most. HumanPen Start Project reports "every analysis population adds up" as one of its four review items, which is the same rule applied inside a single delivery; across three analysts, it needs to be applied across deliveries.</p>
+<h2>Separate the data decision from the model decision</h2>
+<p>Two people disagreeing about a model is normal. Two people disagreeing about which rows are in the dataset is a governance failure. Keep the two conversations apart: data decisions get a dated entry in the log and an owner; model decisions get a note in the analysis plan.</p>
+<p>When a model change implies a data change, it needs both entries. That is the case where provenance is most often lost.</p>
+<h2>Make reruns the unit of trust</h2>
+<p>The rule that survives personnel changes is this: a result is current if a clean rerun from the canonical file reproduces it. Not "if the file exists", not "if the analyst says so".</p>
+<p>HumanPen Start Project's fourth review item is the same idea in miniature — a clean rerun reproduces the results exactly — and its delivery keeps past versions when a revision is made. Together those two properties give a shared project something it usually lacks: a way to say what the numbers were on a given date.</p>
+<h2>When the numbers move, say why in one line</h2>
+<p>Every regenerated table should come with a one-line diff note: what moved, by how much, and why. "Table two: N fell from the full set to the complete-case set after the missingness rule changed; estimate moved from X to Y" is sufficient. Without the note, the next person will assume an error.</p>
+<p>Where a number moves in a way that changes a conclusion, that is not a diff note; it is a decision that needs the whole team, and usually the supervisor.</p>
+<h2>Give each analyst a named scope</h2>
+<p>Parallel work fails when scopes overlap. Assign sections rather than files: one person owns the descriptive tables, one owns the models, one owns the figures. Each output is generated by one script owned by one person, and the shared file is read-only for everyone.</p>
+<p>If two people must touch the same script, one of them waits. That is cheaper than reconciling two divergent versions of the same model.</p>
+<h2>Hand the discipline to the API when work is delegated</h2>
+<p>If part of the analysis is delegated to HumanPen Start Project, the version discipline becomes an interface. The project takes files, returns a plan, and produces a report plus code; the API exposes project state and events, and uploads are explicit steps rather than a shared drive. That means a delegated analysis has a stated input set — which is exactly the property that a shared drive destroys.</p>
+<p>State the canonical file's identity in the brief, including its date, and ask for the analysis to be run on that version. Files can be uploaded up to 5 GB total, so the raw exports and the codebook can travel with the analysis file rather than being reconstructed later.</p>
+<h2>When the log and the code disagree</h2>
+<p>They will disagree, and the code wins as evidence while the log wins as intent. The procedure is to read the code, describe what it actually does, compare that with the log entry, and then decide which is right. Usually the code is right and the log is stale; occasionally the log records a decision that was never implemented, which is the more serious case because a reported result may not include it.</p>
+<p>Record the resolution as a new dated entry rather than editing the old one. The log is an audit trail, and an audit trail that has been tidied is no longer one.</p>
+<h2>What "reproducible" means when three people are involved</h2>
+<p>It does not mean that everyone can run everything. It means that for every reported number there is one named script, one named input file and one named person who can run it. That is a smaller and much more achievable standard than a fully automated pipeline, and it is the standard that survives a staff change.</p>
+<p>Write the mapping as a table with three columns: reported number, script, owner. Keep it next to the log. When a query arrives, the table answers it in a minute instead of a week.</p>
+<h2>Agree what counts as a change, before it happens</h2>
+<p>Write down, at the start, which changes require everyone's agreement and which are individual decisions. In most projects the split is: data inclusion rules, outcome definitions and the headline model require agreement; figure styling, table ordering and text wording do not.</p>
+<p>That single distinction prevents most of the friction, because disagreements about styling get treated as disagreements about results when no such distinction has been made.</p>
+<h2>Frequently asked questions</h2>
+<h3>Do we need git for a shared dataset?</h3>
+<p>Git is good for scripts and bad for large data files. The workable pattern is version control for code, dated filenames plus a checksum for data, and one log for decisions. The log is what people actually read.</p>
+<h3>What if a co-author sends a corrected file mid-analysis?</h3>
+<p>Treat it as a new version event: name it, date it, record what changed, and re-run. Do not overwrite the file that the current draft was produced from, because the draft's numbers must remain explainable.</p>
+<h3>How do we know which version a published paper used?</h3>
+<p>Write it down at submission: the canonical file name, the date, and the delivered report's version. That single line answers most post-publication queries.</p>
+<h3>Is this overkill for a small project?</h3>
+<p>The cost is one log file and one naming rule. The alternative is a reviewer asking a question that nobody in the lab can answer, which is more expensive than either.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project, public product page, https://humanpen.net/projects (accessed 2026-11-24)</li><li>HumanPen Developer API, project state, events and versioning documentation, https://humanpen.net/developers (accessed 2026-11-24)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=three-analysts-one-dataset-version-discipline">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=three-analysts-one-dataset-version-discipline">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/a-reviewer-response-letter-in-three-days.html">A reviewer response in three days</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">When a student graduates</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-desk-check-before-you-submit.html">The desk check before you submit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/phd-student-first-paper-in-one-term.html">A PhD student's first paper in one term</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

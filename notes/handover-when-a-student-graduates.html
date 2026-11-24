@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>When a student graduates: the analysis handover that keeps a lab&#x27;s results reproducible with HumanPen Start Project</title>
+<meta name="description" content="Every lab has one project that nobody can rerun. The student who built it graduated, the script lives on a laptop that has been wiped, and the paper is cited for a number that no c">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When a student graduates: the analysis handover that keeps a lab&#x27;s results reproducible with HumanPen Start Project">
+<meta property="og:description" content="Every lab has one project that nobody can rerun. The student who built it graduated, the script lives on a laptop that has been wiped, and the paper is cited for a number that no c">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html#article", "headline": "When a student graduates: the analysis handover that keeps a lab's results reproducible with HumanPen Start Project", "description": "Every lab has one project that nobody can rerun. The student who built it graduated, the script lives on a laptop that has been wiped, and the paper is cited for a number that no c", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/audience-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>When a student graduates: the analysis handover that keeps a lab's results reproducible with HumanPen Start Project</h1>
+<p>Every lab has one project that nobody can rerun. The student who built it graduated, the script lives on a laptop that has been wiped, and the paper is cited for a number that no current member can regenerate. The cost is not sentimental: it is a reviewer query, a correction, or a replication that fails for reasons nobody can diagnose.</p>
+<p>This is the handover we would run at the end of a project, written so that the next person can reproduce the work with HumanPen Start Project or without it.</p>
+<p><em>Editorial disclosure: published by HumanPen. Product statements describe HumanPen Start Project as its public pages read on 24 November 2026. No synthetic benchmark was run.</em></p>
+<h2>What has to leave with the student</h2>
+<table><thead><tr><th>Artefact</th><th>Why it is unrecoverable later</th><th>Minimum acceptable form</th></tr></thead><tbody>
+<tr><td>The canonical dataset</td><td>Derived files multiply; only one is the source of truth</td><td>A named file plus a note saying what makes it canonical</td></tr>
+<tr><td>The codebook</td><td>Variable meanings live in the builder's memory</td><td>A table of variable, label, unit, coding, missing rule</td></tr>
+<tr><td>The analysis script</td><td>Menu-driven analyses leave no record</td><td>A script that runs from the data file to the tables</td></tr>
+<tr><td>The decisions log</td><td>Why a filter exists is knowledge, not code</td><td>Dated entries with one line of reasoning each</td></tr>
+<tr><td>The delivered report</td><td>The document the paper's numbers came from</td><td>The final <code>.docx</code> with figures and tables</td></tr>
+<tr><td>The figure sources</td><td>Figures get redrawn and diverge from the tables</td><td>Source data per figure, or the code that draws them</td></tr>
+<tr><td>The correspondence</td><td>What was asked, what was promised, what changed</td><td>The review or revision history, in one file</td></tr>
+<tr><td>The access list</td><td>Accounts and storage that will expire</td><td>A named owner for each, transferred before the last day</td></tr>
+</tbody></table>
+<h2>Start the handover a month early, not on the last day</h2>
+<p>The failure mode is a handover compressed into the final week, which produces a zip file and no understanding. Begin four weeks out with one task: the student writes the decisions log, and a second person follows it to reproduce one table. Every gap found in that exercise is a gap that would otherwise have been discovered by a reviewer.</p>
+<p>The test is not "is the archive complete". The test is "can someone else produce table one".</p>
+<h2>Make the canonical dataset a decision, with a date</h2>
+<p>Labs accumulate derivatives: the merged file, the corrected file, the file with the recoded variable, the file used for the sensitivity analysis. Name one as canonical, record the date it became canonical, and state what was corrected relative to its predecessor.</p>
+<p>Then archive the raw exports alongside it. A canonical file with no raw ancestor cannot be audited, and an audit is exactly what a correction request requires.</p>
+<h2>Write the decisions log as a list of sentences</h2>
+<p>Not a diary. One line per decision: what was decided, when, and why. "Excluded patients with missing baseline, because the model requires complete covariates; sensitivity analysis includes them with imputation" is the format. Fifty of those lines will save a successor fifty hours.</p>
+<p>This log is also the raw material for the methods section, which is why it should be written while the analysis is fresh rather than reconstructed at submission.</p>
+<h2>Ship the report, the figures and the code together</h2>
+<p>The minimum reproducible package is the report, the figure sources, and the code that produces both from the canonical data. HumanPen Start Project delivers a report, figures, tables and code as one delivery, and its public example explicitly checks that a clean rerun reproduces the results exactly, which is the property a successor needs most.</p>
+<p>If the project was run on HumanPen Start Project, download the deliverables rather than relying on continued access: projects are kept for six months after the last activity with a reminder three days before expiry, and can be deleted at any time. Six months is a useful window for a paper under review; it is not an archive policy.</p>
+<h2>Record what the numbers were, not only how they were made</h2>
+<p>Archive the final tables as tables, in a format that does not require the analysis to run: a spreadsheet or a CSV per table, with the numbers exactly as published. When a reader queries a value three years later, the answer should not depend on a library version being installed.</p>
+<p>Keep the p-values, the confidence intervals and the denominators. Denominators are the part most often lost, and the part most often queried.</p>
+<h2>Transfer access before the last day</h2>
+<p>Accounts, storage, repository permissions and the project workspace all have owners. Write the owner for each, transfer it while the student still has access, and confirm that the successor can open every file. The most common handover failure is not lost data; it is data that exists and cannot be reached.</p>
+<h2>Put a front page on the archive</h2>
+<p>The archive needs a first file that a stranger can open: a short readme naming the canonical dataset, the script that produces the report, the version of the report, the person who can answer questions, and the date. Everything else in the folder is evidence for those five facts.</p>
+<p>Keep the readme short enough to read in a minute and specific enough to act on. A folder with a good readme is usable by a new member on their first day; a folder without one is a puzzle that only the person who built it can solve, and that person has left.</p>
+<h2>Run the acceptance test</h2>
+<p>Three checks, in this order. First, a second person reproduces one table from the canonical data and the script, without asking questions. Second, the report's numbers match the archived tables cell for cell. Third, every reference in the report resolves.</p>
+<p>Those three checks are the same integrity checks HumanPen Start Project reports on delivery — populations adding up, a clean rerun reproducing results, references found one by one — applied to the archive instead of to a fresh delivery. The difference is that the archive has to pass them without the person who built it.</p>
+<h2>The one-hour version, if the student leaves tomorrow</h2>
+<p>Sometimes the month is not available. In that case do the minimum that makes the work recoverable, in this order: copy the canonical dataset and the script to a shared location, write a page naming the file, the script and the report's version, record the endpoint and the population definitions in three sentences, and have the departing student record a short screen capture of a rerun.</p>
+<p>That hour does not produce a handover. It produces a starting point that a successor can use, which is the difference between a project that can be recovered and one that has to be redone.</p>
+<p>Then schedule the real handover for the first month of the successor's time. The successor's first task should be to reproduce one table, because that task converts an archive into an understanding.</p>
+<h2>Frequently asked questions</h2>
+<h3>What if the student used menu-driven software and there is no script?</h3>
+<p>Then the analysis has to be re-specified from the report and the data before the archive is closed, which is a small project in itself. HumanPen Start Project re-does analyses originally run in SPSS or Stata in Python or R, which produces the missing script as a by-product and makes the result inspectable.</p>
+<h3>How long should an archive be kept?</h3>
+<p>Follow your funder and institution, and treat the paper's citation life as the practical floor. A number that is cited can be queried at any time, so the package that produces it should outlive the project's storage defaults.</p>
+<h3>Who should own the handover?</h3>
+<p>The supervisor, not the departing student. The student produces the artefacts; the supervisor signs off that a second person could use them.</p>
+<h3>Is a zip file enough?</h3>
+<p>A zip file is transport, not a handover. It becomes a handover when it contains the canonical data, the codebook, the script, the decisions log, the report and the figure sources, and when someone else has proved they can use it.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project, public product page, https://humanpen.net/projects (accessed 2026-11-24)</li><li>HumanPen Developer API, retention and delivery documentation, https://humanpen.net/developers (accessed 2026-11-24)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=handover-when-a-student-graduates">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=handover-when-a-student-graduates">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/a-reviewer-response-letter-in-three-days.html">A reviewer response in three days</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-desk-check-before-you-submit.html">The desk check before you submit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/phd-student-first-paper-in-one-term.html">A PhD student's first paper in one term</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/principal-investigator-handover-brief.html">A principal investigator's handover brief</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

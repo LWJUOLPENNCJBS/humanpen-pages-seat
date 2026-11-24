@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How a statistician reviews an outsourced analysis: a checklist that works on HumanPen Start Project deliverables</title>
+<meta name="description" content="Reviewing someone else&#x27;s analysis is a different job from doing the analysis. You are not looking for the best model; you are looking for the places where the report can be wrong w">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistician-reviewing-an-outsourced-analysis.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How a statistician reviews an outsourced analysis: a checklist that works on HumanPen Start Project deliverables">
+<meta property="og:description" content="Reviewing someone else&#x27;s analysis is a different job from doing the analysis. You are not looking for the best model; you are looking for the places where the report can be wrong w">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistician-reviewing-an-outsourced-analysis.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistician-reviewing-an-outsourced-analysis.html#article", "headline": "How a statistician reviews an outsourced analysis: a checklist that works on HumanPen Start Project deliverables", "description": "Reviewing someone else's analysis is a different job from doing the analysis. You are not looking for the best model; you are looking for the places where the report can be wrong w", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/statistician-reviewing-an-outsourced-analysis.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/audience-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>How a statistician reviews an outsourced analysis: a checklist that works on HumanPen Start Project deliverables</h1>
+<p>Reviewing someone else's analysis is a different job from doing the analysis. You are not looking for the best model; you are looking for the places where the report can be wrong without looking wrong. The order matters, because a report that fails on population arithmetic does not need its regression diagnostics read.</p>
+<p>This checklist is the one we would use on a HumanPen Start Project delivery, and on any other delivery that arrives as a document plus figures plus code. It assumes the reviewer has thirty minutes and no access to the analyst.</p>
+<p><em>Editorial disclosure: published by HumanPen. Product statements describe HumanPen Start Project as its public pages read on 24 November 2026. No synthetic benchmark was run; this page is a review procedure, not a comparison of accuracy.</em></p>
+<h2>The order of checks</h2>
+<table><thead><tr><th>Order</th><th>Check</th><th>What you are actually testing</th><th>Cost of skipping it</th></tr></thead><tbody>
+<tr><td>1</td><td>Population arithmetic</td><td>Whether every table's N is a subset of a defined set, and whether the subsets sum correctly</td><td>Every downstream percentage inherits the error</td></tr>
+<tr><td>2</td><td>Endpoint definition</td><td>Whether the analysed endpoint is the protocol's endpoint, at the protocol's timepoint</td><td>The paper answers a different question convincingly</td></tr>
+<tr><td>3</td><td>Missing data handling</td><td>Whether exclusions are counted, described and tested for sensitivity</td><td>Silent bias in the headline estimate</td></tr>
+<tr><td>4</td><td>Model specification</td><td>Whether covariates, functional form and clustering match the design</td><td>Standard errors that are too small</td></tr>
+<tr><td>5</td><td>Reproducibility</td><td>Whether a clean rerun returns the same numbers</td><td>A result nobody can defend under query</td></tr>
+<tr><td>6</td><td>Figures and tables</td><td>Whether the visual claim matches the tabulated claim</td><td>A figure that oversells a null result</td></tr>
+<tr><td>7</td><td>Citations</td><td>Whether each cited claim exists and says what it is cited for</td><td>Retraction risk at the worst moment</td></tr>
+<tr><td>8</td><td>Language of certainty</td><td>Whether the prose claims more than the test supports</td><td>Reviewer objection that is entirely avoidable</td></tr>
+</tbody></table>
+<h2>1. Start with arithmetic, not with statistics</h2>
+<p>Before reading a single estimate, find every N in the document and place it in a hierarchy. The full analysis set should be the largest number, every subgroup should be a subset of it, and every subgroup partition should sum to its parent. When the numbers do not reconcile, the cause is usually an undocumented exclusion rather than an error in the model.</p>
+<p>HumanPen Start Project's public example makes this checkable by listing it as one of four review items: every analysis population adds up. That is the right level of ambition for a first pass — not "the statistics are correct", but "the accounting is correct".</p>
+<h2>2. Confirm the endpoint is the endpoint</h2>
+<p>Read the endpoint definition in the methods, then read what the results actually computed. Look for three common drifts: a composite endpoint reported as if it were a single component, a timepoint silently replaced by the nearest available assessment, and a continuous variable dichotomised at a cut point that appears nowhere in the protocol.</p>
+<p>In the published HumanPen example the primary endpoint is death or dependency at six months, and the report's first check is that the primary endpoint matches: 62.2% in the aspirin group against 63.5% in the control group, P = 0.072. Notice what that sentence does — it pins the endpoint, the timepoint, the groups and the test in one line, so a reviewer can compare it against the protocol without hunting.</p>
+<h2>3. Read the missing data section as a list of decisions</h2>
+<p>Missing data is not a nuisance to be mentioned; it is a set of decisions. Count them: how many patients were excluded, on what variable, at what stage, and what happened to the estimate when they were handled differently. A sensitivity analysis is only reassuring if it is described well enough to be repeated.</p>
+<p>The public example states that about 150 missing outcomes are handled in a sensitivity analysis, against a full analysis set of 19,435 patients. Whether or not you agree with the handling, the number is on the page, which means the reviewer can ask a specific question instead of a general one.</p>
+<h2>4. Match the model to the design</h2>
+<p>Check that the covariates are the pre-specified ones, that clustering follows the unit of randomisation, that the functional form is either justified or shown to be insensitive, and that any interaction was pre-specified rather than discovered. If the design is a trial, the analysis should look like a trial analysis; if it is a survey, the weights should appear somewhere.</p>
+<p>A specification that cannot be justified in one sentence is usually a specification that was chosen after looking at the fit.</p>
+<h2>5. Insist on a clean rerun</h2>
+<p>Ask for the analysis to be re-run from the delivered data and the delivered code, in a fresh environment. The test is not whether the numbers are close; it is whether they are identical. Differences that are "within rounding" are a signal that something in the pipeline is not deterministic — a random seed, a sort order, a filter applied in one script and not another.</p>
+<p>HumanPen Start Project states this as its third review item: a clean rerun reproduces the results exactly. If an analyst cannot demonstrate that, the correct conclusion is not that the result is wrong, but that nobody currently knows whether it is.</p>
+<h2>6. Compare figures against tables, not against expectations</h2>
+<p>For every figure, find the table cell that contains its numbers. A confidence interval that crosses the null in the table should not look like a clear effect in the figure; a subgroup with wide intervals should not be drawn at the same visual weight as the overall estimate. Axis truncation, log scales and dual axes are the three places where an honest figure can still mislead.</p>
+<p>HumanPen Start Project's delivery list includes 300 dpi figures and three-line tables with captions, which is a format claim rather than a correctness claim — but format matters here, because a caption is where the reader learns what the error bars represent.</p>
+<h2>7. Check citations mechanically, then read them</h2>
+<p>Mechanical first: does each reference resolve, is the year consistent with the volume, is the DOI real. Then substantive: does the cited paper support the sentence it is attached to. The second check is the one that catches the most damage, and it is also the one most often skipped under time pressure.</p>
+<p>The published example reports the mechanical version as its fourth item — all 11 references found, one by one — and separately mentions a PubMed search with every DOI checked. That is the minimum. It does not certify that every citation is apt.</p>
+<h2>8. Audit the language of certainty</h2>
+<p>Finally, read the discussion and count the verbs. "Suggest", "are consistent with" and "show" are three different claims. A null result reported as "no effect" rather than "no evidence of an effect" is a factual overreach that a careful reviewer will catch, and it is the easiest thing in the document to fix before submission.</p>
+<h2>What to write in the review</h2>
+<p>A useful review has three parts: what you verified and how, what you could not verify and why, and the specific changes required. Vague approval is the failure mode; a report that has been read carefully and approved specifically is worth more than a report that has been rewritten twice.</p>
+<p>HumanPen Start Project's revision flow fits this shape: revisions are requested in the project, the scope is explained first, work starts after you confirm, and a new version is delivered while past versions are kept. That means a review comment can be answered with a diff rather than with a new document.</p>
+<h2>Frequently asked questions</h2>
+<h3>How long should a review take?</h3>
+<p>Longer than the delivery took to read, and shorter than the analysis took to run. For a report with a handful of tables, an experienced reviewer can complete the eight checks above in a single sitting; the expensive part is the citation reading, which scales with the number of claims rather than with the size of the document.</p>
+<h3>Is it a problem that the code was written by an AI?</h3>
+<p>It is a problem if nobody can read it. The relevant question is whether the code can be inspected, re-run and modified by a human who understands the design. HumanPen Start Project delivers the code with the report, and the analysis runs in Python or R, which are both inspectable by any statistician who works in either language.</p>
+<h3>What if the delivered numbers differ slightly from my own earlier run?</h3>
+<p>Find out why before deciding which is right. A difference usually comes from one of four places: a filter applied differently, a different version of a variable, a different missing-data rule, or a random seed. Each of those is a documentation gap, and each is worth closing.</p>
+<h3>Can I check the analysis without the raw data?</h3>
+<p>Partially. You can check arithmetic, consistency between tables and figures, the language of certainty, and citations. You cannot check the model without the data, which is why the data and the code should travel together with the report.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project, public product page, https://humanpen.net/projects (accessed 2026-11-24)</li><li>HumanPen Developer API, delivery and event documentation, https://humanpen.net/developers (accessed 2026-11-24)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=statistician-reviewing-an-outsourced-analysis">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=statistician-reviewing-an-outsourced-analysis">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/a-reviewer-response-letter-in-three-days.html">A reviewer response in three days</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">When a student graduates</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-desk-check-before-you-submit.html">The desk check before you submit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/phd-student-first-paper-in-one-term.html">A PhD student's first paper in one term</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moving an SPSS analysis to R: the migration checklist we use on HumanPen Start Project jobs</title>
+<meta name="description" content="Almost every SPSS analysis that arrives for re-doing comes with the same request: keep the results, change the tool. That is the wrong framing. The results are a consequence of a h">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/spss-to-r-migration-checklist.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moving an SPSS analysis to R: the migration checklist we use on HumanPen Start Project jobs">
+<meta property="og:description" content="Almost every SPSS analysis that arrives for re-doing comes with the same request: keep the results, change the tool. That is the wrong framing. The results are a consequence of a h">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/spss-to-r-migration-checklist.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/spss-to-r-migration-checklist.html#article", "headline": "Moving an SPSS analysis to R: the migration checklist we use on HumanPen Start Project jobs", "description": "Almost every SPSS analysis that arrives for re-doing comes with the same request: keep the results, change the tool. That is the wrong framing. The results are a consequence of a h", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/spss-to-r-migration-checklist.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/audience-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Moving an SPSS analysis to R: the migration checklist we use on HumanPen Start Project jobs</h1>
+<p>Almost every SPSS analysis that arrives for re-doing comes with the same request: keep the results, change the tool. That is the wrong framing. The results are a consequence of a hundred small decisions that SPSS makes silently — listwise deletion, the reference category, the way a value label overrides a number. Migrating means re-deciding those explicitly, then proving that the new decisions reproduce the old output.</p>
+<p>This is the checklist we apply when an SPSS job is re-done in R on HumanPen Start Project, which states plainly that analyses originally done in SPSS or Stata are performed using Python or R. It is written so that you can run the same check on your own migration.</p>
+<p><em>Editorial disclosure: published by HumanPen. Product statements describe HumanPen Start Project as its public pages read on 24 November 2026. No synthetic benchmark was run; the checklist below is a procedure, not a comparison of statistical software.</em></p>
+<h2>The migration, in one table</h2>
+<table><thead><tr><th>Stage</th><th>What SPSS holds</th><th>What R needs</th><th>How parity is proven</th></tr></thead><tbody>
+<tr><td>Data file</td><td><code>.sav</code> with variable and value labels</td><td>A data frame, with labels preserved as attributes or a codebook</td><td>Row and column counts match, and label lookups return the same strings</td></tr>
+<tr><td>Missing values</td><td>System-missing plus user-defined codes</td><td>Explicit <code>NA</code>, with a documented rule per variable</td><td>Missingness counts per variable match the original</td></tr>
+<tr><td>Variable types</td><td>Numeric with value labels, strings with widths</td><td>Factors with declared levels, or numeric when the code is ordinal</td><td>Level order matches, including the reference level</td></tr>
+<tr><td>Weights</td><td>A weight variable selected in the dialog</td><td>Explicit weight argument in the model call</td><td>Weighted N matches the original table</td></tr>
+<tr><td>Split and select</td><td>Split file and select cases</td><td>Grouped operations and explicit filters</td><td>Every subgroup's N matches</td></tr>
+<tr><td>Models</td><td>Procedure output with defaults</td><td>A model call with every default written out</td><td>Coefficients match to a stated tolerance</td></tr>
+<tr><td>Tables</td><td>Custom tables, pivot output</td><td>A table built from the model object</td><td>Cell values and decimal places match</td></tr>
+<tr><td>Output</td><td><code>.spv</code> viewer file</td><td>Reproducible script plus rendered document</td><td>A clean rerun reproduces every number</td></tr>
+</tbody></table>
+<h2>1. Inventory the file before you migrate anything</h2>
+<p>Open the <code>.sav</code> and write down four things: the number of cases, the number of variables, every user-defined missing code, and every variable whose label differs from its name. The last two are where migrations break. A code of 99 that means "unknown" will be read as ninety-nine by any tool that is not told otherwise, and a variable labelled "income band" with values 1–5 is not a continuous measure.</p>
+<p>Produce a codebook from this inventory and keep it with the data. In a HumanPen Start Project job the codebook travels with the files in the same upload rather than being reconstructed afterwards.</p>
+<h2>2. Decide where labels live</h2>
+<p>R has no equivalent of the SPSS value-label layer, so you must choose: convert labels into factors, keep numeric codes and carry a lookup table, or both. The choice has consequences. Factors protect you from analysing a code as a quantity, but they also change model output, because the first level becomes the reference.</p>
+<p>Write the reference level down explicitly. A migration that silently changes the reference group produces the same model with different coefficients, which is the most confusing kind of difference to debug.</p>
+<h2>3. Make missingness a written rule</h2>
+<p>SPSS excludes cases listwise by default in most procedures, and the exclusion is invisible in the output. In R the same behaviour has to be requested, variable by variable, and the count of excluded cases should be printed rather than assumed.</p>
+<p>For each variable, record one of: never missing, missing means not applicable, missing means unknown, or missing is a category. Then state what the analysis does with each. A sensitivity analysis is only meaningful if the main analysis's rule is written down; the public HumanPen example makes this explicit with about 150 missing outcomes handled in a sensitivity analysis against a full analysis set of 19,435 patients.</p>
+<h2>4. Rebuild split and select as code</h2>
+<p>Split file and select cases are the two SPSS features that most often hide in someone's memory rather than in the syntax. Enumerate every subgroup you intend to report, then produce them from one grouped operation so that the subgroup counts are visible and reconcile with the total.</p>
+<p>If the subgroup counts do not sum to the parent, stop. That is a finding about the data, not a formatting issue.</p>
+<h2>5. Write out every default</h2>
+<p>SPSS runs procedures with defaults that are rarely stated: the handling of ties, the confidence level, the method for estimating standard errors, the treatment of zero cells. In R each of these is an argument. The migration is complete when every argument is either default-by-explicit-choice or set deliberately.</p>
+<p>Keep a table of the decisions with a one-line reason each. It becomes the methods paragraph, and it is also the thing that makes the next migration faster.</p>
+<h2>6. Prove parity with a tolerance, not with an impression</h2>
+<p>Rerun both analyses and compare numbers as numbers, not as screenshots. Compare, in this order: case counts, then descriptive statistics, then model coefficients and standard errors, then p-values. Differences in p-values without differences in estimates mean a different test or a different degrees-of-freedom convention, which is a decision to document rather than a bug.</p>
+<p>State your tolerance before you compare. Exact equality is achievable for counts; estimates may differ in the last digit because of numerical libraries, and a stated tolerance turns an argument into a check.</p>
+<h2>7. Rebuild tables from the model, not from the output</h2>
+<p>The SPSS pivot table is a rendering of results. In R you build the table from the model object, which means you control the decimals, the ordering and the labels. This is an improvement, but it is also a risk: a hand-built table can disagree with the text if either is edited later.</p>
+<p>Generate the table in the same script that fits the model, and let the document take its numbers from the script. HumanPen Start Project delivers three-line tables with captions as part of the deliverable, which is where the journal's table conventions get applied.</p>
+<h2>8. Re-run from scratch, in a fresh place</h2>
+<p>The final check is the one that decides whether the migration is real: run the whole pipeline from the original data file in a clean environment, with no leftover objects, and confirm that every number in the document is reproduced.</p>
+<p>A clean rerun that reproduces the results exactly is one of the four review items HumanPen Start Project reports on delivery. It is a stronger claim than "the numbers look the same", and it is the only one worth making.</p>
+<h2>Common failures, and the one-line fix</h2>
+<p>The reference category flipped: declare factor levels in the order you intend, and print them in the methods. Missing data treated as a value: recode before any summary, and print the missingness table first. Weighted analysis run unweighted: pass the weight argument at every model, not once at the top. Duplicate rows from a merge: check the join keys and assert uniqueness before joining. Rounding applied twice: round once, at the table, never in the data.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I keep using the SPSS syntax file as documentation?</h3>
+<p>Yes, as documentation of what was done, not as an executable specification. Keep it in the archive next to the new script, because it is the record of the original decisions that the new code is trying to reproduce.</p>
+<h3>Do the labels survive the migration?</h3>
+<p>Only if you carry them deliberately. The safe pattern is to convert labels into a codebook and into factor levels in the script, then verify that the rendered tables show the same words the original tables showed.</p>
+<h3>What if the new numbers differ from the published ones?</h3>
+<p>Find the decision that differs before deciding which is right. The usual candidates are a filter, a recoded value, a missingness rule, a weight, or a reference level. Each of those has a documentary answer.</p>
+<h3>Does this work for a thesis committee that expects SPSS output?</h3>
+<p>The deliverable is a report with tables, figures and code, not a <code>.spv</code> file. If a committee requires the original software's output specifically, that is a requirement to state before the work starts rather than a difference to discover afterwards.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project, public product page, https://humanpen.net/projects (accessed 2026-11-24)</li><li>HumanPen Developer API, upload, project and delivery documentation, https://humanpen.net/developers (accessed 2026-11-24)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=spss-to-r-migration-checklist">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=spss-to-r-migration-checklist">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/a-reviewer-response-letter-in-three-days.html">A reviewer response in three days</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">When a student graduates</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-desk-check-before-you-submit.html">The desk check before you submit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/phd-student-first-paper-in-one-term.html">A PhD student's first paper in one term</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

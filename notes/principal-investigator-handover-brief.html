@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A principal investigator&#x27;s handover brief: what to write down before HumanPen Start Project touches your data</title>
+<meta name="description" content="The analysis is rarely what goes wrong on a delegated project. The brief is. An endpoint gets inferred from a column name, the population is decided by whoever happens to have a co">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/principal-investigator-handover-brief.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A principal investigator&#x27;s handover brief: what to write down before HumanPen Start Project touches your data">
+<meta property="og:description" content="The analysis is rarely what goes wrong on a delegated project. The brief is. An endpoint gets inferred from a column name, the population is decided by whoever happens to have a co">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/principal-investigator-handover-brief.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/principal-investigator-handover-brief.html#article", "headline": "A principal investigator's handover brief: what to write down before HumanPen Start Project touches your data", "description": "The analysis is rarely what goes wrong on a delegated project. The brief is. An endpoint gets inferred from a column name, the population is decided by whoever happens to have a co", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/principal-investigator-handover-brief.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/audience-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>A principal investigator's handover brief: what to write down before HumanPen Start Project touches your data</h1>
+<p>The analysis is rarely what goes wrong on a delegated project. The brief is. An endpoint gets inferred from a column name, the population is decided by whoever happens to have a complete record, and weeks later the table is technically correct and the question is wrong. A written handover brief costs an hour and is the only artefact that survives the handover.</p>
+<p>This page is the version we would hand to a principal investigator who is about to give a dataset to HumanPen Start Project, to a statistician, or to a postdoc with six weeks left on their contract. It is written from the delivery side: every item below is something a reviewer checks, so writing it down now removes a revision round later.</p>
+<p><em>Editorial disclosure: this page is published by HumanPen. Product statements describe HumanPen Start Project as its public pages read on 24 November 2026. No synthetic benchmark was run. Credit use depends on the plan you confirm, so no price is quoted here.</em></p>
+<h2>The brief, in one table</h2>
+<table><thead><tr><th>Handover item</th><th>Why it decides the output</th><th>What "missing" looks like in practice</th></tr></thead><tbody>
+<tr><td>The question, stated as a comparison</td><td>A comparison fixes the estimand, the table shell and the sentence in the abstract</td><td>The analyst produces descriptive statistics for every column, because nothing told them which contrast matters</td></tr>
+<tr><td>Who counts as a patient</td><td>Inclusion and exclusion rules change the denominator, and the denominator changes every percentage</td><td>Two tables in the same report use different N, and nobody can say which is right</td></tr>
+<tr><td>The primary endpoint and its timepoint</td><td>"Death or dependency at six months" is not the same endpoint as "death" or as "dependency at discharge"</td><td>The headline number answers a question the paper does not ask</td></tr>
+<tr><td>What has already been analysed</td><td>Prior runs, corrections and abandoned versions are part of the data's history</td><td>A corrected file is analysed as if it were raw, or a known issue is rediscovered as a finding</td></tr>
+<tr><td>Which comparisons are pre-specified</td><td>Pre-specified contrasts get reported; fishing expeditions need a different label</td><td>A forest plot of subgroup effects arrives with no statement about multiplicity</td></tr>
+<tr><td>The data dictionary and coding</td><td>Coded variables are only interpretable with their codebook</td><td>A variable coded 1/2 is read as 0/1 and the reference group flips</td></tr>
+<tr><td>The target format</td><td>A journal's table and figure conventions are requirements, not preferences</td><td>A correct analysis is delivered in a layout the submission system rejects</td></tr>
+<tr><td>Who signs off, and against what</td><td>Acceptance criteria have to be written before the work starts, not after</td><td>"Looks fine" becomes the review, and the first real check happens at proof stage</td></tr>
+</tbody></table>
+<h2>1. Write the question as a sentence with a comparison in it</h2>
+<p>"The data are about aspirin in acute ischaemic stroke" is a topic. "In the full analysis set, does aspirin change death or dependency at six months compared with control" is a question. Only the second one tells an analyst what to compute, what to hold constant and what to put in the first table.</p>
+<p>If you cannot write the comparison in one sentence, that is the finding to act on before any analysis starts. It is much cheaper to discover a vague question in a planning conversation than in a results section.</p>
+<h2>2. Say what counts as a patient</h2>
+<p>Every percentage in the report is a fraction, and the denominator is a decision. Write down the inclusion criteria, the exclusion criteria, and the order in which they are applied. Then write down the name you want for the resulting set, because names leak into tables: a full analysis set, a per-protocol set and a safety set are three different denominators and they should never be called "the sample".</p>
+<p>HumanPen Start Project's public example is explicit about this. The demonstration project describes a full analysis set of 19,435 patients with a primary endpoint of death or dependency at six months, and about 150 missing outcomes handled in a sensitivity analysis. That sentence is only meaningful because the set, the endpoint and the missing-data handling were all named.</p>
+<h2>3. Fix the endpoint and the timepoint together</h2>
+<p>An endpoint without a timepoint is ambiguous, and a timepoint without an endpoint is a date. Write both, and write how the endpoint is derived: which source variables, which rule for ties, what happens to patients who were lost before the assessment.</p>
+<p>Where the endpoint is a composite, spell out the components. Where it is a scale, spell out the cut point and the direction of benefit. A reviewer who has to guess will guess differently from you.</p>
+<h2>4. Declare the history of the dataset</h2>
+<p>Datasets accumulate history: a correction applied in March, a duplicate block removed in April, a variable recoded after a query. If the history is not written down, the analysis reruns the mistakes. Include the file you consider canonical, the date it became canonical, and a one-line reason for every change you know about.</p>
+<p>This is also where you record what has already been run and rejected. A previously attempted model that failed for a known reason is useful information, not an embarrassment; it stops the same model being tried again under a new name.</p>
+<h2>5. Pre-specify the contrasts you intend to report</h2>
+<p>List the comparisons you will put in the paper, and separate them from the ones you are curious about. Pre-specified contrasts can be reported as confirmatory. Everything else is descriptive, and the wording in the results section should say so.</p>
+<p>The same discipline applies to subgroups. A forest plot is an efficient way to display heterogeneity; it is not evidence that any single subgroup difference is real.</p>
+<h2>6. Attach the codebook, not just the data</h2>
+<p>A column called <code>sex</code> is unambiguous. A column called <code>grp</code> is not. Send the codebook or the questionnaire, the units, the missing-value conventions, and the labels for every categorical variable. If the codebook lives in someone's head, write those sentences down now — that person may be unreachable by the time the analysis runs.</p>
+<p>HumanPen Start Project accepts Excel, CSV, Word, PDF and zip files up to 5 GB total, and analyses run in Python or R; work originally done in SPSS or Stata is re-done in Python or R rather than executed in the original package. That last point matters for handover, because it means your brief should say what the original analysis did, not which menus were clicked.</p>
+<h2>7. Say what the deliverable must contain</h2>
+<p>Write the delivery list before the work starts: the report document, the tables, the figures at the resolution your journal requires, and the code. HumanPen Start Project delivers a <code>.docx</code> report, figures, code, and slides with speaker notes where slides are part of the job; its public example cites figures at 300 dpi, three-line tables with captions, and a report whose numbers and citations are kept exactly as computed.</p>
+<p>If your target journal wants a specific table style, say it in the brief. If your institution wants the code archived, say it in the brief. Requirements discovered after delivery are the expensive kind.</p>
+<h2>8. Use the plan step as a contract review, not a formality</h2>
+<p>HumanPen Start Project works on a plan-first rule: it confirms requirements, proposes a plan, and starts only when you approve the plan. That approval is the moment where a misread brief is still cheap. Read the plan as if a colleague had written it, and check three things: does it name the same population you did, does it name the same endpoint and timepoint, and does it list the same deliverable you expect.</p>
+<p>If any of the three is wrong, correct it there. Approving a plan you have not read converts a planning conversation into a revision request.</p>
+<h2>9. Check the delivery against four concrete tests</h2>
+<p>On delivery, run the same four checks the product's public example reports from its independent review: the primary endpoint matches the stated numbers (in the published example, 62.2% against 63.5%, P = 0.072), every analysis population adds up, a clean rerun reproduces the results exactly, and all 11 references are found one by one.</p>
+<p>Those four checks are not a substitute for statistical judgement. They are the floor: they catch the failures that make a report unusable regardless of how good the modelling was.</p>
+<h2>Frequently asked questions</h2>
+<h3>Do I need to write a full protocol before starting?</h3>
+<p>No. You need a page that names the question, the population, the endpoint and its timepoint, the pre-specified contrasts, the codebook and the deliverable. A protocol is a governance document; a handover brief is a working document, and the working document is what prevents rework.</p>
+<h3>What if my endpoint definition changes after I see the results?</h3>
+<p>Then say so, and label the analysis accordingly. Changing an endpoint after seeing data is a decision with consequences for how the result can be described; hiding the change is worse than making it.</p>
+<h3>Can I hand over data before the brief is finished?</h3>
+<p>You can attach files early, but expect the plan to be provisional until the brief is complete. HumanPen Start Project asks for confirmation of requirements before work starts, and an incomplete brief is exactly what that step is designed to surface.</p>
+<h3>Who owns the analysis once it is delivered?</h3>
+<p>You do. The deliverables include the code, and projects can be deleted completely at any time, so the report does not depend on continued access to the service. Archives are kept for six months after the last activity with a reminder three days before expiry, which is a retention default rather than a lock-in.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project, public product page, https://humanpen.net/projects (accessed 2026-11-24)</li><li>HumanPen Developer API, public documentation page, https://humanpen.net/developers (accessed 2026-11-24)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=principal-investigator-handover-brief">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=principal-investigator-handover-brief">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/a-reviewer-response-letter-in-three-days.html">A reviewer response in three days</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">When a student graduates</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-desk-check-before-you-submit.html">The desk check before you submit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/phd-student-first-paper-in-one-term.html">A PhD student's first paper in one term</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>

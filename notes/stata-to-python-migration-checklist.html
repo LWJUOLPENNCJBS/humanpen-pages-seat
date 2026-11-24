@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moving a Stata analysis to Python: a migration checklist for HumanPen Start Project jobs</title>
+<meta name="description" content="A Stata project is usually a folder of .do files that were written over several years by several people, each of which assumes the dataset in memory is already in a particular stat">
+<link rel="canonical" href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/stata-to-python-migration-checklist.html">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Moving a Stata analysis to Python: a migration checklist for HumanPen Start Project jobs">
+<meta property="og:description" content="A Stata project is usually a folder of .do files that were written over several years by several people, each of which assumes the dataset in memory is already in a particular stat">
+<meta property="og:url" content="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/stata-to-python-migration-checklist.html">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "@id": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/stata-to-python-migration-checklist.html#article", "headline": "Moving a Stata analysis to Python: a migration checklist for HumanPen Start Project jobs", "description": "A Stata project is usually a folder of .do files that were written over several years by several people, each of which assumes the dataset in memory is already in a particular stat", "datePublished": "2026-11-24", "dateModified": "2026-11-24", "inLanguage": "en", "author": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "publisher": {"@type": "Organization", "name": "HumanPen", "url": "https://humanpen.net/"}, "mainEntityOfPage": "https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/stata-to-python-migration-checklist.html"}</script>
+<style>
+:root{--fg:#14181f;--mut:#5b6472;--line:#e3e7ee;--bg:#fff;--accent:#0b5fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB",sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:28px 20px 72px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px;
+ border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:32px;font-size:14px}
+.top a{color:var(--fg);text-decoration:none;font-weight:600}
+.top .nav a{color:var(--mut);font-weight:400;margin-left:16px}
+h1{font-size:31px;line-height:1.25;letter-spacing:-.01em;margin:0 0 18px}
+h2{font-size:22px;margin:38px 0 12px;padding-top:6px}
+h3{font-size:17px;margin:26px 0 8px}
+p{margin:0 0 16px}
+ul,ol{margin:0 0 16px;padding-left:22px}
+li{margin:6px 0}
+table{width:100%;border-collapse:collapse;margin:18px 0 24px;font-size:14.5px;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:#f6f8fb;font-weight:600}
+code{background:#f3f5f9;padding:1px 5px;border-radius:4px;font-size:13.5px}
+a{color:var(--accent)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+.cta{margin:36px 0;padding:20px 22px;border:1px solid var(--line);border-radius:10px;background:#fafbfd}
+.cta a{font-weight:700;text-decoration:none}
+.related{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.related a{color:var(--fg);text-decoration:none;border-bottom:1px solid var(--line)}
+.foot{margin-top:40px;font-size:13px;color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><a href="https://humanpen.net/projects">HumanPen Start Project</a>
+<div class="nav"><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/audience-index.html">All guides</a><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/compare-index.html">Tool comparisons</a><a href="https://humanpen.net/developers">Developer API</a></div></div>
+<main>
+<h1>Moving a Stata analysis to Python: a migration checklist for HumanPen Start Project jobs</h1>
+<p>A Stata project is usually a folder of <code>.do</code> files that were written over several years by several people, each of which assumes the dataset in memory is already in a particular state. That assumption is the thing that breaks in migration. The models are portable; the sequence of <code>preserve</code>, <code>restore</code>, <code>merge</code> and <code>drop</code> calls around them is what has to be reconstructed.</p>
+<p>This is the checklist we apply when a Stata analysis is re-done in Python on HumanPen Start Project, whose public page states that analyses originally done in SPSS or Stata are performed using Python or R. It is written to be run by the person who has to defend the numbers afterwards.</p>
+<p><em>Editorial disclosure: published by HumanPen. Product statements describe HumanPen Start Project as its public pages read on 24 November 2026. No synthetic benchmark was run; the procedure below is about migration discipline, not about which language is better.</em></p>
+<h2>The migration, in one table</h2>
+<table><thead><tr><th>Stage</th><th>What the <code>.do</code> file relies on</th><th>What Python needs</th><th>How parity is proven</th></tr></thead><tbody>
+<tr><td>Load</td><td><code>use</code> with a working directory set by the operator</td><td>An explicit path and a declared schema</td><td>Row and column counts match</td></tr>
+<tr><td>Missing values</td><td><code>.</code> and extended missing codes</td><td><code>NaN</code> or explicit sentinel handling</td><td>Missingness counts per variable match</td></tr>
+<tr><td>Labels</td><td><code>label define</code> and <code>label values</code></td><td>A codebook plus categorical dtypes or a lookup frame</td><td>Rendered tables show the same words</td></tr>
+<tr><td>Reshape</td><td><code>reshape</code>, <code>preserve</code>, <code>restore</code></td><td>Explicit wide/long functions with named keys</td><td>Reshaped dimensions match both ways</td></tr>
+<tr><td>Estimation</td><td><code>regress</code>, <code>logit</code>, <code>xtreg</code>, <code>svy:</code> prefixes</td><td>A model call with every option written out</td><td>Coefficients and standard errors match to a tolerance</td></tr>
+<tr><td>Post-estimation</td><td><code>margins</code>, <code>lincom</code>, <code>test</code></td><td>Predicted margins or contrasts computed explicitly</td><td>Contrast values and intervals match</td></tr>
+<tr><td>Tables</td><td><code>esttab</code>, <code>outreg2</code>, <code>collect</code></td><td>A table built from the model object</td><td>Cell values and decimals match</td></tr>
+<tr><td>Loop</td><td><code>foreach</code> over varlists</td><td>A function applied over a column list</td><td>Every output exists for every input</td></tr>
+</tbody></table>
+<h2>1. Reconstruct the state machine before porting the models</h2>
+<p>Read the <code>.do</code> files in order and write down what each one assumes about the dataset in memory. Most projects have three or four implicit states: raw, cleaned, analysis-ready, and a subsample used for a robustness check. Draw those states as a list of named datasets, then port each transition as a function.</p>
+<p>The migration is finished when each state is a named artefact you can produce independently, rather than a side effect of having run the previous section.</p>
+<h2>2. Handle missing values explicitly</h2>
+<p>Stata's <code>.</code> propagates through arithmetic and is excluded from most estimators by default. In Python, <code>NaN</code> also propagates but estimators differ in whether they drop or fail, and pandas operations differ in whether they skip. Decide per variable: never missing, structurally missing, unknown, or a valid category.</p>
+<p>Then print the missingness table first in every report. It is the cheapest defence against a reviewer's question about who was excluded.</p>
+<h2>3. Carry the label layer into a codebook</h2>
+<p><code>label define</code> is a layer that most Python code drops. Keep it: export the label sets into the codebook, and encode categorical variables so that the rendered tables show labels rather than codes. Verify by comparing a frequency table built from the new pipeline against the original one, label by label.</p>
+<p>This is also the step where a silently recoded category gets caught, because the label comparison surfaces a shifted code.</p>
+<h2>4. Port reshapes as named operations</h2>
+<p><code>preserve</code> and <code>restore</code> are a manual stack. <code>reshape wide/long</code> is a named transformation. In Python both become functions with explicit keys and explicit outputs, which is better, provided the keys are asserted: check that the wide form has one row per unit, and that long-to-wide-to-long returns the original frame.</p>
+<p>Most migration errors in panel data are reshape errors, and they are invisible in the final table because the model still runs.</p>
+<h2>5. Write out the estimation options</h2>
+<p>Stata's estimators carry defaults that the <code>.do</code> file may not mention: the covariance estimator, the clustering, the treatment of singleton groups, the base level of a factor variable. In Python each is an argument. Enumerate them, choose deliberately, and record the choice with a one-line reason.</p>
+<p>Where the original used a prefix such as a survey prefix, port it as a design declaration rather than as an option on the model, so that every model in the script inherits the same design.</p>
+<h2>6. Recompute post-estimation quantities from the model</h2>
+<p>Margins, linear combinations and joint tests are where migrations most often produce plausible but wrong numbers, because they are computed after the model and depend on the covariate values chosen. Recompute them explicitly, and compare against the original output value by value, including the confidence intervals.</p>
+<p>If a margin differs while the coefficients match, the difference is in the evaluation point or in the delta-method convention, not in the model.</p>
+<h2>7. Build tables from model objects</h2>
+<p>Generate the table in the same script that fits the model, so the document's numbers cannot drift from the analysis. HumanPen Start Project delivers three-line tables with captions and figures at 300 dpi, which is where journal conventions are applied; the numbers in those tables should come from the model objects rather than from a spreadsheet intermediate.</p>
+<h2>8. Prove parity with stated tolerances</h2>
+<p>Compare in this order: counts, descriptives, coefficients, standard errors, test statistics. Declare a tolerance in advance. Exact equality for counts; last-digit tolerance for estimates where numerical libraries differ. A difference that exceeds the tolerance is a decision to find, not a rounding error to accept.</p>
+<p>The final gate is a clean rerun: the whole pipeline from the original file, in a fresh environment, reproducing every number in the document. HumanPen Start Project reports exactly this as one of four review items, alongside the check that every analysis population adds up.</p>
+<h2>What tends to go wrong</h2>
+<p>The working directory is the first casualty: <code>.do</code> files assume the operator's folder, and scripts need paths passed in. Version drift is the second: behaviour changes between releases, so the original output should be regenerated in the original version before it is used as the parity target, or the difference will be attributed to the wrong cause. String encodings are the third: a label with a non-ASCII character can change shape between systems, and the table will show it.</p>
+<h2>Estimates that cannot be compared directly</h2>
+<p>Some quantities are not portable at all: a stored estimation result, a saved margin, a hand-computed statistic pasted into a table. For those, the migration has to reconstruct the formula rather than the command. Write the formula in the methods note, compute it in the new script, and compare the value with the original output.</p>
+<p>Where the original value cannot be reproduced, the honest outcome is a documented discrepancy: what the old analysis computed, what the new one computes, and which one the paper should report. That sentence is far more defensible than a silently updated table.</p>
+<h2>Frequently asked questions</h2>
+<h3>Can I keep the <code>.do</code> files as the specification?</h3>
+<p>Yes, as a record of intent and of the original decisions. Archive them next to the new pipeline, because they are the only evidence of what the earlier analysis did when the two disagree.</p>
+<h3>Do I need to reproduce the original output exactly?</h3>
+<p>You need to reproduce it, then explain any deliberate difference. An unexplained difference is a liability; a documented improvement, such as a corrected missing-data rule, is a contribution.</p>
+<h3>What about commands with no direct equivalent?</h3>
+<p>Some post-estimation routines have no one-to-one replacement. In that case the honest migration is to compute the quantity from first principles in the script, show the formula, and compare the result with the original output. That is more defensible than importing a package whose conventions you cannot inspect.</p>
+<h3>Does the delivered project include the code?</h3>
+<p>Yes. HumanPen Start Project delivers the report, figures, tables and code, and the analysis runs in Python or R, so a reader who works in either language can inspect what was done rather than infer it.</p>
+<h2>Sources</h2>
+<ul><li>HumanPen Start Project, public product page, https://humanpen.net/projects (accessed 2026-11-24)</li><li>HumanPen Developer API, delivery and versioning documentation, https://humanpen.net/developers (accessed 2026-11-24)</li></ul>
+<p><a href="https://research.humanpen.net/?utm_source=stata-to-python-migration-checklist">Start Project</a></p>
+<div class="cta"><p style="margin:0 0 8px">Attach your data and papers, describe what you need, approve the plan, and get the report, charts and code.
+</p><p style="margin:0"><a href="https://research.humanpen.net/?utm_source=stata-to-python-migration-checklist">Start Project &rarr;</a></p></div>
+<div class="related"><strong>Related guides</strong><ul><li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/a-reviewer-response-letter-in-three-days.html">A reviewer response in three days</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/handover-when-a-student-graduates.html">When a student graduates</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/journal-desk-check-before-you-submit.html">The desk check before you submit</a></li>
+<li><a href="https://lwjuolpenncjbs.github.io/humanpen-pages-seat/notes/phd-student-first-paper-in-one-term.html">A PhD student's first paper in one term</a></li></ul></div>
+<div class="foot">Published by HumanPen. Product statements reflect the public HumanPen pages as read on 24 November 2026; no synthetic benchmark was run. HumanPen Start Project: <a href="https://humanpen.net/projects">humanpen.net/projects</a>.</div>
+</main>
+</div>
+</body>
+</html>
